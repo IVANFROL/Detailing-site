@@ -1,58 +1,201 @@
-import { Button } from "@/components/ui/button"
-import { ArrowRight } from "lucide-react"
+"use client"
 
-const services = [
+import { Button } from "@/components/ui/button"
+import { ArrowRight, ChevronLeft, ChevronRight } from "lucide-react"
+import { useState } from "react"
+
+const allServices = [
+  // Мойка
   {
     title: "ДЕТЕЙЛИНГ МОЙКА",
     price: "5 000 ₽",
     description: "Мойка кузова в три фазы с очисткой от битума, металлических вкраплений, колесных дисков. Уборка салона",
-    image: "/yellow-luxury-car-polishing-detailing.jpg",
-  },
-  {
-    title: "ХИМЧИСТКА САЛОНА",
-    price: "10 000 ₽",
-    description: "Химчистка салона автомобиля любой сложности",
-    image: "/car-interior-cleaning-leather-seats.jpg",
-  },
-  {
-    title: "ДЕТЕЙЛИНГ ХИМЧИСТКА",
-    price: "20 000 ₽",
-    description: "Полная химчистка салона автомобиля с детальной обработкой",
-    image: "/car-interior-cleaning-leather-seats.jpg",
-  },
-  {
-    title: "ДЕТЕЙЛИНГ ПОЛИРОВКА",
-    price: "20 000 ₽",
-    description: "Полная полировка кузова автомобиля с устранением царапин и притертостей",
-    image: "/yellow-luxury-car-polishing-detailing.jpg",
-  },
-  {
-    title: "ЗАЩИТА КОЖИ КЕРАМИКОЙ",
-    price: "15 000 ₽",
-    description: "Защитное керамическое покрытие для кожаных элементов салона",
-    image: "/leather-car-seat-repair-restoration.jpg",
+    image: "/yslugi/ДЕТЕЙЛИНГ МОЙКА.jpeg",
+    category: "Мойка",
   },
   {
     title: "МОЙКА ДВИГАТЕЛЯ",
     price: "3 000 ₽",
-    description: "Безопасная мойка мотора с диэлектрическим составом",
-    image: "/car-engine-cleaning.jpg",
+    description: "Безопасная Мойка мотора с диэлектрическим составом.",
+    image: "/yslugi/МОЙКА ДВИГАТЕЛЯ.jpeg",
+    category: "Мойка",
+  },
+  {
+    title: "ДЕТЕЙЛИНГ МОЙКА ДВИГАТЕЛЯ (ДВС) С КОНСЕРВАЦИЕЙ",
+    price: "6 000 ₽",
+    description: "Комплексная мойка двигателя с защитной консервацией",
+    image: "/yslugi/Детейлинг мойка двигателя (ДВС) с консервацией.jpeg",
+    category: "Мойка",
+  },
+  {
+    title: "МОЙКА ПОДВЕСКИ АВТОМОБИЛЯ",
+    price: "4 000 ₽",
+    description: "Тщательная мойка подвески автомобиля",
+    image: "yslugi/МОЙКА ПОДВЕСКИ АВТОМОБИЛЯ.jpeg",
+    category: "Мойка",
+  },
+  {
+    title: "ХИМЧИСТКА ДИСКОВ",
+    price: "1 000 ₽",
+    description: "Профессиональная химчистка колесных дисков",
+    image: "/yslugi/ХИМЧИСТКА ДИСКОВ.jpeg",
+    category: "Мойка",
+  },
+  
+  // Полировка
+  {
+    title: "ДЕТЕЙЛИНГ ПОЛИРОВКА",
+    price: "20 000 ₽",
+    description: "Полная полировка кузова автомобиля с устранением царапин и притертостей",
+    image: "/yslugi/ДЕТЕЙЛИНГ ПОЛИРОВКА.jpeg",
+    category: "Полировка",
   },
   {
     title: "ПОЛИРОВКА ФАР",
     price: "6 000 ₽",
     description: "Полировка фар (перед и зад) для восстановления прозрачности",
-    image: "/car-headlight-polishing.jpg",
+    image: "/yslugi/ПОЛИРОВКА ФАР.jpeg",
+    category: "Полировка",
   },
+  {
+    title: "ПОДЕТАЛЬНАЯ ПОЛИРОВКА",
+    price: "2 500 ₽",
+    description: "Локальная полировка отдельных элементов кузова",
+    image: "/yslugi/ПОДЕТАЛЬНАЯ ПОЛИРОВКА.jpeg",
+    // image: "/luxury-car-paint-correction-detailing.jpg",
+    category: "Полировка",
+  },
+  {
+    title: "ПОЛИРОВКА КУЗОВА АВТОМОБИЛЯ",
+    price: "10 000 ₽",
+    description: "Полировка кузова для восстановления блеска",
+    image: "/yslugi/ПОЛИРОВКА КУЗОВА АВТОМОБИЛЯ.jpeg",
+    category: "Полировка",
+  },
+  
+  // Химчистка
+  {
+    title: "ХИМЧИСТКА САЛОНА",
+    price: "10 000 ₽",
+    description: "Химчистка салона автомобиля любой сложности",
+    image: "/yslugi/ХИМЧИСТКА САЛОНА.jpeg",
+    category: "Химчистка",
+  },
+  {
+    title: "ДЕТЕЙЛИНГ ХИМЧИСТКА",
+    price: "20 000 ₽",
+    description: "Полная химчистка салона автомобиля с детальной обработкой",
+    image: "/yslugi/ДЕТЕЙЛИНГ ХИМЧИСТКА.jpeg",
+    category: "Химчистка",
+  },
+  {
+    title: "ХИМЧИСТКА (ЛОКАЛЬНАЯ)",
+    price: "2 000 ₽",
+    description: "Локальная химчистка отдельных элементов салона",
+    image: "/yslugi/ХИМЧИСТКА (ЛОКАЛЬНАЯ).jpeg",
+    category: "Химчистка",
+  },
+  
+  // Защитные пленки
+  {
+    title: "ЗАЩИТА ФАР (ПОЛИУРЕТАН)",
+    price: "6 000 ₽",
+    description: "Защита фар полиуретановой пленкой",
+    image: "/yslugi/ЗАЩИТА ФАР (ПОЛИУРЕТАН).jpeg",
+    category: "Защитные пленки",
+  },
+  {
+    title: "ОКЛЕЙКА КУЗОВА ПОЛИУРЕТАНОМ",
+    price: "75 000 ₽",
+    description: "Полная оклейка кузова защитной полиуретановой пленкой",
+    image: "/yslugi/ОКЛЕЙКА КУЗОВА ПОЛИУРЕТАНОМ.jpeg",
+    category: "Защитные пленки",
+  },
+  {
+    title: "ОКЛЕЙКА КУЗОВА ВИНИЛОМ",
+    price: "150 000 ₽",
+    description: "Полная оклейка кузова виниловой пленкой",
+    image: "/yslugi/ОКЛЕЙКА КУЗОВА ВИНИЛОМ.jpeg",
+    category: "Защитные пленки",
+  },
+  
+  // Покрытия
+  {
+    title: "ЗАЩИТА КОЖИ КЕРАМИКОЙ",
+    price: "15 000 ₽",
+    description: "Защитное керамическое покрытие для кожаных элементов салона",
+    image: "/leather-car-seat-repair-restoration.jpg",
+    category: "Покрытия",
+  },
+  {
+    title: "АНТИДОЖДЬ",
+    price: "2 500 ₽",
+    description: "Нанесение гидрофобного покрытия на стекла",
+    image: "/yslugi/АНТИДОЖДЬ.jpeg",
+    category: "Покрытия",
+  },
+  {
+    title: "ТВЕРДЫЙ ВОСК",
+    price: "6 000 ₽",
+    description: "Защитное покрытие твердым воском",
+    image: "/yslugi/ТВЕРДЫЙ ВОСК.jpeg",
+    category: "Покрытия",
+  },
+  {
+    title: "ЖИДКОЕ СТЕКЛО",
+    price: "12 000 ₽",
+    description: "Защитное покрытие жидким стеклом",
+    image: "/yslugi/ЖИДКОЕ СТЕКЛО.jpeg",
+    category: "Покрытия",
+  },
+  {
+    title: "КЕРАМИЧЕСКОЕ ПОКРЫТИЕ",
+    price: "15 000 ₽",
+    description: "Нанесение керамического защитного покрытия",
+    image: "/yslugi/КЕРАМИЧЕСКОЕ ПОКРЫТИЕ.jpeg",
+    category: "Покрытия",
+  },
+  
+  // Устранение запахов
+  {
+    title: "ОЗОНАЦИЯ",
+    price: "2 000 ₽",
+    description: "Устранение запахов озонированием салона",
+    image: "/yslugi/ОЗОНАЦИЯ.jpeg",
+    category: "Устранение запахов в автомобиле",
+  },
+  
+  // Удаление вмятин
   {
     title: "УДАЛЕНИЕ ВМЯТИН",
     price: "от 2 500 ₽",
     description: "Удаление вмятин без покраски методом PDR",
     image: "/paintless-dent-removal-car-body.jpg",
+    category: "Все",
   },
 ]
 
+const categories = ["Все", "Мойка", "Полировка", "Химчистка", "Защитные пленки", "Покрытия", "Устранение запахов в автомобиле"]
+
 export function Services() {
+  const [selectedCategory, setSelectedCategory] = useState("Все")
+  const [currentPage, setCurrentPage] = useState(1)
+  const itemsPerPage = 9
+
+  const filteredServices = selectedCategory === "Все" 
+    ? allServices 
+    : allServices.filter(service => service.category === selectedCategory)
+
+  const totalPages = Math.ceil(filteredServices.length / itemsPerPage)
+  const startIndex = (currentPage - 1) * itemsPerPage
+  const endIndex = startIndex + itemsPerPage
+  const currentServices = filteredServices.slice(startIndex, endIndex)
+
+  const handleCategoryChange = (category: string) => {
+    setSelectedCategory(category)
+    setCurrentPage(1)
+  }
+
   return (
     <section className="bg-black px-4 py-20">
       <div className="mx-auto max-w-7xl">
@@ -66,8 +209,28 @@ export function Services() {
           </p>
         </div>
 
+        {/* Каталог фильтров */}
+        <div className="mb-8">
+          <h3 className="mb-4 text-2xl font-bold text-white">Каталог</h3>
+          <div className="flex flex-wrap gap-3">
+            {categories.map((category) => (
+              <button
+                key={category}
+                onClick={() => handleCategoryChange(category)}
+                className={`px-4 py-2 rounded-lg font-semibold transition-all duration-300 ${
+                  selectedCategory === category
+                    ? "bg-gradient-to-r from-[#54E260] to-[#348B41] text-black"
+                    : "bg-zinc-900 text-white border border-[#54E260]/20 hover:border-[#54E260]/40"
+                }`}
+              >
+                {category}
+              </button>
+            ))}
+          </div>
+        </div>
+
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {services.map((service, index) => (
+          {currentServices.map((service, index) => (
             <div key={index} className="group relative h-80 overflow-hidden rounded-lg border border-[#54E260]/20 hover:border-[#54E260]/40 transition-all duration-300">
               <img
                 src={service.image || "/placeholder.svg"}
@@ -89,6 +252,51 @@ export function Services() {
             </div>
           ))}
         </div>
+
+        {/* Пагинация */}
+        {totalPages > 1 && (
+          <div className="mt-8 flex items-center justify-center gap-4">
+            <button
+              onClick={() => setCurrentPage(prev => Math.max(prev - 1, 1))}
+              disabled={currentPage === 1}
+              className={`flex h-12 w-12 items-center justify-center rounded-full border ${
+                currentPage === 1
+                  ? "border-[#575757]/20 text-[#575757]/50 cursor-not-allowed"
+                  : "border-[#54E260]/40 text-white hover:bg-[#54E260]/20"
+              } transition-all duration-300`}
+            >
+              <ChevronLeft className="h-6 w-6" />
+            </button>
+            
+            <div className="flex items-center gap-2">
+              {[...Array(totalPages)].map((_, i) => (
+                <button
+                  key={i}
+                  onClick={() => setCurrentPage(i + 1)}
+                  className={`flex h-12 w-12 items-center justify-center rounded-full font-bold transition-all duration-300 ${
+                    currentPage === i + 1
+                      ? "bg-gradient-to-r from-[#54E260] to-[#348B41] text-black"
+                      : "bg-zinc-900 text-white border border-[#54E260]/20 hover:border-[#54E260]/40"
+                  }`}
+                >
+                  {i + 1}
+                </button>
+              ))}
+            </div>
+
+            <button
+              onClick={() => setCurrentPage(prev => Math.min(prev + 1, totalPages))}
+              disabled={currentPage === totalPages}
+              className={`flex h-12 w-12 items-center justify-center rounded-full border ${
+                currentPage === totalPages
+                  ? "border-[#575757]/20 text-[#575757]/50 cursor-not-allowed"
+                  : "border-[#54E260]/40 text-white hover:bg-[#54E260]/20"
+              } transition-all duration-300`}
+            >
+              <ChevronRight className="h-6 w-6" />
+            </button>
+          </div>
+        )}
 
         <div className="mt-12 flex justify-center">
           <Button size="lg" className="bg-gradient-to-r from-[#54E260] to-[#348B41] px-12 py-6 text-lg font-semibold text-black hover:from-[#348B41] hover:to-[#54E260] transition-all duration-300">
