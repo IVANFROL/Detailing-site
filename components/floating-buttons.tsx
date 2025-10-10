@@ -23,7 +23,7 @@ export function FloatingButtons() {
       <Button
         size="icon"
         className="bg-[#54E260] hover:bg-[#348B41] text-white rounded-full w-16 h-16 shadow-xl"
-        onClick={() => window.open("tel:+79250433318", "_self")}
+        onClick={() => window.open("tel:+79629099962", "_self")}
         title="Позвонить"
       >
         <Phone className="h-7 w-7" />

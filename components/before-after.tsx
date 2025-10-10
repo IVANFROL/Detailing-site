@@ -8,20 +8,20 @@ const beforeAfterImages = [
     after: "/car-ceiling-headliner-clean-white-after-detailing.jpg",
   },
   {
-    before: "/dirty-black-car-exterior-before-detailing.jpg",
-    after: "/placeholder.svg?height=400&width=600",
+    before: "/beforeandafter/1.jpg",
+    after: "/beforeandafter/2.jpg",
   },
   {
-    before: "/placeholder.svg?height=400&width=600",
-    after: "/placeholder.svg?height=400&width=600",
+    before: "/beforeandafter/3.jpg",
+    after: "/beforeandafter/4.jpg",
   },
   {
-    before: "/placeholder.svg?height=400&width=600",
-    after: "/placeholder.svg?height=400&width=600",
+    before: "/beforeandafter/5.jpg",
+    after: "/beforeandafter/6.jpg",
   },
   {
-    before: "/placeholder.svg?height=400&width=600",
-    after: "/placeholder.svg?height=400&width=600",
+    before: "/beforeandafter/7.jpg",
+    after: "/beforeandafter/8.jpg",
   },
 ]
 

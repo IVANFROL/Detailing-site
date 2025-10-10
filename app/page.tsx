@@ -7,7 +7,8 @@ import { Pricing } from "@/components/pricing"
 import { Reviews } from "@/components/reviews"
 import { BeforeAfter } from "@/components/before-after"
 import { ContactForm } from "@/components/contact-form"
-import { Clients } from "@/components/clients"
+import { ContactSection } from "@/components/contact-section"
+// import { Clients } from "@/components/clients" // временно отключено
 
 export default function Home() {
   return (
@@ -21,7 +22,8 @@ export default function Home() {
       <Reviews />
       <BeforeAfter />
       <ContactForm />
-      <Clients />
+      <ContactSection />
+      {/* <Clients /> */}
     </main>
   )
 }

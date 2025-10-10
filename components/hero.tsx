@@ -1,3 +1,8 @@
+"use client"
+
+import { Button } from "@/components/ui/button"
+import { Phone } from "lucide-react"
+
 export function Hero() {
   return (
     <section className="relative h-screen w-full overflow-hidden">
@@ -24,9 +29,30 @@ export function Hero() {
           <span className="block text-3xl tracking-widest md:text-5xl text-[#54E260]">DETAILING STUDIO</span>
         </h1>
         <div className="mb-8 h-1 w-32 bg-gradient-to-r from-[#54E260] to-[#348B41]"></div>
-        <p className="text-center text-lg text-gray-300 max-w-2xl">
+        <p className="text-center text-lg text-gray-300 max-w-2xl mb-8">
           Профессиональный уход для вашего автомобиля
         </p>
+
+        {/* Кнопки */}
+        <div className="flex gap-4 items-center">
+          <Button
+            onClick={() => {
+              document.getElementById('contact-form')?.scrollIntoView({ behavior: 'smooth' })
+            }}
+            className="bg-gradient-to-r from-[#54E260] to-[#348B41] text-black hover:from-[#348B41] hover:to-[#54E260] transition-all duration-300 text-lg px-8 py-6 h-auto"
+          >
+            Записаться
+          </Button>
+
+          <Button
+            variant="outline"
+            onClick={() => window.open("tel:+79629099962", "_self")}
+            className="border-[#54E260] text-[#54E260] hover:bg-[#54E260]/10 transition-all duration-300 text-lg px-8 py-6 h-auto gap-3"
+          >
+            <Phone className="h-5 w-5" />
+            +7 (962) 909-99-62
+          </Button>
+        </div>
       </div>
 
       {/* Bottom navigation */}
