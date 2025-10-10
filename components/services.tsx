@@ -244,7 +244,17 @@ export function Services() {
                   <span className="text-lg font-bold text-[#54E260] whitespace-nowrap">{service.price}</span>
                 </div>
                 <p className="mb-4 text-sm text-[#575757]">{service.description}</p>
-                <button className="flex items-center gap-2 text-[#54E260] transition-colors hover:text-[#348B41]">
+                <button 
+                  onClick={() => {
+                    // Устанавливаем источник заявки
+                    window.dispatchEvent(new CustomEvent('setFormSource', { 
+                      detail: { source: 'Запись на услугу', service: service.title } 
+                    }))
+                    // Скроллим к форме
+                    document.getElementById('contact-form')?.scrollIntoView({ behavior: 'smooth' })
+                  }}
+                  className="flex items-center gap-2 text-[#54E260] transition-colors hover:text-[#348B41]"
+                >
                   <span className="text-sm font-semibold">Записаться</span>
                   <ArrowRight className="h-4 w-4" />
                 </button>
@@ -299,7 +309,16 @@ export function Services() {
         )}
 
         <div className="mt-12 flex justify-center">
-          <Button size="lg" className="bg-gradient-to-r from-[#54E260] to-[#348B41] px-12 py-6 text-lg font-semibold text-black hover:from-[#348B41] hover:to-[#54E260] transition-all duration-300">
+          <Button 
+            onClick={() => {
+              window.dispatchEvent(new CustomEvent('setFormSource', { 
+                detail: { source: 'Предварительная запись' } 
+              }))
+              document.getElementById('contact-form')?.scrollIntoView({ behavior: 'smooth' })
+            }}
+            size="lg" 
+            className="bg-gradient-to-r from-[#54E260] to-[#348B41] px-12 py-6 text-lg font-semibold text-black hover:from-[#348B41] hover:to-[#54E260] transition-all duration-300"
+          >
             ПРЕДВАРИТЕЛЬНАЯ ЗАПИСЬ
           </Button>
         </div>
