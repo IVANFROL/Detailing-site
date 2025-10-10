@@ -2,12 +2,13 @@ import type { Metadata } from 'next'
 import { GeistSans } from 'geist/font/sans'
 import { GeistMono } from 'geist/font/mono'
 import { Analytics } from '@vercel/analytics/next'
+import { FloatingButtons } from '@/components/floating-buttons'
 import './globals.css'
 
 export const metadata: Metadata = {
-  title: 'v0 App',
-  description: 'Created with v0',
-  generator: 'v0.app',
+  title: 'SLS DETAILING STUDIO | Профессиональный уход за вашим автомобилем',
+  description: 'Детейлинг студия в Москве. Полировка, химчистка, защитные пленки, керамика, удаление вмятин и другие услуги по уходу за автомобилем.',
+  generator: 'Next.js',
 }
 
 export default function RootLayout({
@@ -19,6 +20,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={`font-sans ${GeistSans.variable} ${GeistMono.variable}`}>
         {children}
+        <FloatingButtons />
         <Analytics />
       </body>
     </html>
