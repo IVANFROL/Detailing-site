@@ -6,8 +6,8 @@ export async function POST(request: Request) {
     const { name, phone, email, message, source, service } = body
 
     // Замените на ваши данные бота
-    const TELEGRAM_BOT_TOKEN = process.env.TELEGRAM_BOT_TOKEN || 'YOUR_BOT_TOKEN'
-    const TELEGRAM_CHAT_IDS = process.env.TELEGRAM_CHAT_ID || 'YOUR_CHAT_ID'
+    const TELEGRAM_BOT_TOKEN = process.env.TELEGRAM_BOT_TOKEN || '8355759292:AAHhywuFI6IlyRVxNT7q5G_WN1oXElW7b4E'
+    const TELEGRAM_CHAT_IDS = process.env.TELEGRAM_CHAT_ID || '6491802621,2118490521'
 
     // Разбиваем Chat IDs на массив (поддержка нескольких получателей)
     const chatIds = TELEGRAM_CHAT_IDS.split(',').map(id => id.trim())
