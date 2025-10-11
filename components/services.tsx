@@ -114,6 +114,15 @@ export function Services() {
       image: "/yslugi/АНТИДОЖДЬ.jpeg",
       category: "coating",
     },
+    
+    // Возвращаем ДЕТЕЙЛИНГ МОЙКУ
+    {
+      title: "ДЕТЕЙЛИНГ МОЙКА",
+      price: "от 5 000 ₽",
+      description: "Мойка кузова в три фазы с очисткой от битума, металлических вкраплений, колесных дисков. Уборка салона",
+      image: "/yslugi/ДЕТЕЙЛИНГ МОЙКА.jpeg",
+      category: "cleaning",
+    },
   ]
 
   const filteredServices = selectedCategory === "all" 
