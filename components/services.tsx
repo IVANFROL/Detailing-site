@@ -95,7 +95,7 @@ export function Services() {
       title: "ЗАЩИТА КОЖИ КЕРАМИКОЙ",
       price: "от 10 000 ₽", // Обновлена цена
       description: "Защитное керамическое покрытие для кожаных элементов салона",
-      image: "/yslugi/ЗАЩИТА КОЖИ.jpeg", // Новое фото
+      image: "/yslugi/ЗАЩИТА КЕРАМИКОЙ.jpg", // Новое фото
       category: "coating",
     },
     {
