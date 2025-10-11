@@ -10,7 +10,7 @@ const categories = [
   { id: "polish", name: "Полировка" },
   { id: "cleaning", name: "Химчистка" },
   { id: "coating", name: "Покрытия" },
-  { id: "odor", name: "Устранение запахов" },
+  // { id: "odor", name: "Устранение запахов" },
 ]
 
 export function Services() {
