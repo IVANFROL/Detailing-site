@@ -206,7 +206,11 @@ export function Services() {
         {totalPages > 1 && (
           <div className="mt-8 flex items-center justify-center gap-4">
             <button
-              onClick={() => setCurrentPage(prev => Math.max(prev - 1, 1))}
+              onClick={(e) => {
+                e.preventDefault()
+                e.stopPropagation()
+                setCurrentPage(prev => Math.max(prev - 1, 1))
+              }}
               disabled={currentPage === 1}
               className={`flex h-12 w-12 items-center justify-center rounded-full border ${
                 currentPage === 1
@@ -237,7 +241,11 @@ export function Services() {
             </div>
 
             <button
-              onClick={() => setCurrentPage(prev => Math.min(prev + 1, totalPages))}
+              onClick={(e) => {
+                e.preventDefault()
+                e.stopPropagation()
+                setCurrentPage(prev => Math.min(prev + 1, totalPages))
+              }}
               disabled={currentPage === totalPages}
               className={`flex h-12 w-12 items-center justify-center rounded-full border ${
                 currentPage === totalPages
