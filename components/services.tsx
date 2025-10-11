@@ -40,7 +40,7 @@ export function Services() {
       title: "ДЕТЕЙЛИНГ ПОЛИРОВКА",
       price: "от 20 000 ₽",
       description: "Полная полировка кузова автомобиля с устранением царапин и притертостей",
-      image: "/yslugi/КАРНИВАЛ.jpeg", // Новое фото
+      image: "/yslugi/ДЕТЕЙЛИНГ ПОЛИРОВКА.jpeg", // Новое фото
       category: "polish",
     },
     
@@ -79,7 +79,7 @@ export function Services() {
       title: "МОЙКА ДВИГАТЕЛЯ",
       price: "от 3 000 ₽",
       description: "Безопасная Мойка мотора с диэлектрическим составом.",
-      image: "/yslugi/МАЗЕРАТИ.jpeg", // Новое фото
+      image: "/yslugi/МОЙКА ДВИГАТЕЛЯ.jpeg", // Новое фото
       category: "cleaning",
     },
     
@@ -88,7 +88,7 @@ export function Services() {
       title: "ДЕТЕЙЛИНГ ХИМЧИСТКА",
       price: "от 20 000 ₽",
       description: "Полная химчистка салона автомобиля с детальной обработкой",
-      image: "/yslugi/МАЗЕРАТИ САЛОН.jpeg", // Новое фото
+      image: "/yslugi/ДЕТЕЙЛИНГ ХИМЧИСТКА.jpeg", // Новое фото
       category: "cleaning",
     },
     {
