@@ -221,7 +221,10 @@ export function Services() {
               {[...Array(totalPages)].map((_, i) => (
                 <button
                   key={i}
-                  onClick={() => setCurrentPage(i + 1)}
+                  onClick={(e) => {
+                    e.preventDefault()
+                    setCurrentPage(i + 1)
+                  }}
                   className={`flex h-12 w-12 items-center justify-center rounded-full font-bold transition-all duration-300 ${
                     currentPage === i + 1
                       ? "bg-gradient-to-r from-[#54E260] to-[#348B41] text-black"
