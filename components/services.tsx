@@ -35,109 +35,67 @@ export function Services() {
       category: "films",
     },
     
-    // 2. КУЗОВ - ПОЛИРОВКА (20k, 10k, 2.5k)
+    // 2. КУЗОВ - ПОЛИРОВКА (20k)
     {
       title: "ДЕТЕЙЛИНГ ПОЛИРОВКА",
       price: "от 20 000 ₽",
       description: "Полная полировка кузова автомобиля с устранением царапин и притертостей",
-      image: "/yslugi/ДЕТЕЙЛИНГ ПОЛИРОВКА.jpeg",
-      category: "polish",
-    },
-    {
-      title: "ПОЛИРОВКА КУЗОВА АВТОМОБИЛЯ",
-      price: "от 10 000 ₽",
-      description: "Полировка кузова для восстановления блеска",
-      image: "/yslugi/ПОЛИРОВКА КУЗОВА АВТОМОБИЛЯ.jpeg",
-      category: "polish",
-    },
-    {
-      title: "ПОДЕТАЛЬНАЯ ПОЛИРОВКА",
-      price: "от 2 500 ₽",
-      description: "Локальная полировка отдельных элементов кузова",
-      image: "/yslugi/ПОДЕТАЛЬНАЯ ПОЛИРОВКА.jpeg",
+      image: "/yslugi/КАРНИВАЛ.jpeg", // Новое фото
       category: "polish",
     },
     
-    // 3. КУЗОВ - ПОКРЫТИЯ (15k, 12k, 6k)
-    {
-      title: "КЕРАМИЧЕСКОЕ ПОКРЫТИЕ",
-      price: "от 15 000 ₽",
-      description: "Нанесение керамического защитного покрытия",
-      image: "/yslugi/КЕРАМИЧЕСКОЕ ПОКРЫТИЕ.jpeg",
-      category: "coating",
-    },
+    // 3. КУЗОВ - ПОКРЫТИЯ (10k, 3k)
     {
       title: "ЖИДКОЕ СТЕКЛО",
-      price: "от 12 000 ₽",
+      price: "от 10 000 ₽", // Обновлена цена
       description: "Защитное покрытие жидким стеклом",
       image: "/yslugi/ЖИДКОЕ СТЕКЛО.jpeg",
       category: "coating",
     },
     {
       title: "ТВЕРДЫЙ ВОСК",
-      price: "от 6 000 ₽",
+      price: "от 3 000 ₽", // Обновлена цена
       description: "Защитное покрытие твердым воском",
       image: "/yslugi/ТВЕРДЫЙ ВОСК.jpeg",
       category: "coating",
     },
     
-    // 4. КУЗОВ - ОСТАЛЬНОЕ (6k, 6k, 6k, 5k, 4k, 3k)
-    {
-      title: "ЗАЩИТА ФАР (ПОЛИУРЕТАН)",
-      price: "от 6 000 ₽",
-      description: "Защита фар полиуретановой пленкой",
-      image: "/yslugi/ЗАЩИТА ФАР (ПОЛИУРЕТАН).jpeg",
-      category: "films",
-    },
-    {
-      title: "ПОЛИРОВКА ФАР",
-      price: "от 6 000 ₽",
-      description: "Полировка фар (перед и зад) для восстановления прозрачности",
-      image: "/yslugi/ПОЛИРОВКА ФАР.jpeg",
-      category: "polish",
-    },
-    {
-      title: "ДЕТЕЙЛИНГ МОЙКА ДВИГАТЕЛЯ (ДВС) С КОНСЕРВАЦИЕЙ",
-      price: "от 6 000 ₽",
-      description: "Комплексная мойка двигателя с защитной консервацией",
-      image: "/yslugi/Детейлинг мойка двигателя (ДВС) с консервацией.jpeg",
-      category: "cleaning",
-    },
-    {
-      title: "ДЕТЕЙЛИНГ МОЙКА",
-      price: "от 5 000 ₽",
-      description: "Мойка кузова в три фазы с очисткой от битума, металлических вкраплений, колесных дисков. Уборка салона",
-      image: "/yslugi/ДЕТЕЙЛИНГ МОЙКА.jpeg",
-      category: "cleaning",
-    },
+    // 4. КУЗОВ - ОСТАЛЬНОЕ (6k, 2k, 3k)
     {
       title: "МОЙКА ПОДВЕСКИ АВТОМОБИЛЯ",
-      price: "от 4 000 ₽",
+      price: "от 6 000 ₽", // Обновлена цена
       description: "Тщательная мойка подвески автомобиля",
       image: "yslugi/МОЙКА ПОДВЕСКИ АВТОМОБИЛЯ.jpeg",
       category: "cleaning",
     },
     {
+      title: "ПОЛИРОВКА ФАР",
+      price: "от 2 000 ₽", // Обновлена цена
+      description: "Полировка фар (перед и зад) для восстановления прозрачности",
+      image: "/yslugi/ПОЛИРОВКА ФАР.jpeg",
+      category: "polish",
+    },
+    {
       title: "МОЙКА ДВИГАТЕЛЯ",
       price: "от 3 000 ₽",
       description: "Безопасная Мойка мотора с диэлектрическим составом.",
-      image: "/yslugi/МОЙКА ДВИГАТЕЛЯ.jpeg",
+      image: "/yslugi/МАЗЕРАТИ.jpeg", // Новое фото
       category: "cleaning",
     },
     
-    // 5. САЛОН - ХИМЧИСТКА (20k, 15k, 10k, 2k)
+    // 5. САЛОН - ХИМЧИСТКА (20k, 10k)
     {
       title: "ДЕТЕЙЛИНГ ХИМЧИСТКА",
       price: "от 20 000 ₽",
       description: "Полная химчистка салона автомобиля с детальной обработкой",
-      image: "/yslugi/ДЕТЕЙЛИНГ ХИМЧИСТКА.jpeg",
+      image: "/yslugi/МАЗЕРАТИ САЛОН.jpeg", // Новое фото
       category: "cleaning",
     },
     {
       title: "ЗАЩИТА КОЖИ КЕРАМИКОЙ",
-      price: "от 15 000 ₽",
+      price: "от 10 000 ₽", // Обновлена цена
       description: "Защитное керамическое покрытие для кожаных элементов салона",
-      image: "/leather-car-seat-repair-restoration.jpg",
+      image: "/yslugi/ЗАЩИТА КОЖИ.jpeg", // Новое фото
       category: "coating",
     },
     {
@@ -147,44 +105,14 @@ export function Services() {
       image: "/yslugi/ХИМЧИСТКА САЛОНА.jpeg",
       category: "cleaning",
     },
-    {
-      title: "ХИМЧИСТКА (ЛОКАЛЬНАЯ)",
-      price: "от 2 000 ₽",
-      description: "Локальная химчистка отдельных элементов салона",
-      image: "/yslugi/ХИМЧИСТКА (ЛОКАЛЬНАЯ).jpeg",
-      category: "cleaning",
-    },
     
-    // 6. САЛОН - УСТРАНЕНИЕ ЗАПАХОВ (2k)
-    {
-      title: "ОЗОНАЦИЯ",
-      price: "от 2 000 ₽",
-      description: "Устранение запахов озонированием салона",
-      image: "/yslugi/ОЗОНАЦИЯ.jpeg",
-      category: "odor",
-    },
-    
-    // 7. МЕЛОЧИ (2.5k, 2.5k, 1k)
-    {
-      title: "УДАЛЕНИЕ ВМЯТИН",
-      price: "от 2 500 ₽",
-      description: "Удаление вмятин без покраски методом PDR",
-      image: "/paintless-dent-removal-car-body.jpg",
-      category: "all",
-    },
+    // 6. МЕЛОЧИ (1.5k)
     {
       title: "АНТИДОЖДЬ",
-      price: "от 2 500 ₽",
+      price: "от 1 500 ₽", // Обновлена цена
       description: "Нанесение гидрофобного покрытия на стекла",
       image: "/yslugi/АНТИДОЖДЬ.jpeg",
       category: "coating",
-    },
-    {
-      title: "ХИМЧИСТКА ДИСКОВ",
-      price: "от 1 000 ₽",
-      description: "Профессиональная химчистка колесных дисков",
-      image: "/yslugi/ХИМЧИСТКА ДИСКОВ.jpeg",
-      category: "cleaning",
     },
   ]
 
