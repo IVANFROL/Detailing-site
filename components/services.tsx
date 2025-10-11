@@ -2,7 +2,7 @@
 
 import { Button } from "@/components/ui/button"
 import { ArrowRight, ChevronLeft, ChevronRight } from "lucide-react"
-import { useState } from "react"
+import { useState, useRef } from "react"
 
 const categories = [
   { id: "all", name: "Все" },
@@ -16,6 +16,7 @@ const categories = [
 export function Services() {
   const [selectedCategory, setSelectedCategory] = useState("all")
   const [currentPage, setCurrentPage] = useState(1)
+  const servicesRef = useRef<HTMLElement>(null)
   const itemsPerPage = 9
 
   const allServices = [
@@ -135,7 +136,7 @@ export function Services() {
   const currentServices = filteredServices.slice(startIndex, endIndex)
 
   return (
-    <section className="bg-black px-4 py-20">
+    <section ref={servicesRef} className="bg-black px-4 py-20">
       <div className="mx-auto max-w-7xl">
         <div className="mb-12 text-center">
           <h2 className="text-4xl font-bold text-white md:text-5xl">УСЛУГИ</h2>
@@ -170,8 +171,9 @@ export function Services() {
           </div>
         </div>
 
-        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {currentServices.map((service, index) => (
+        <div className="min-h-[800px] md:min-h-[600px]">
+          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+            {currentServices.map((service, index) => (
             <div key={index} className="group relative h-80 overflow-hidden rounded-lg border border-[#54E260]/20 hover:border-[#54E260]/40 transition-all duration-300">
               <img
                 src={service.image || "/placeholder.svg"}
@@ -200,6 +202,7 @@ export function Services() {
               </div>
             </div>
           ))}
+          </div>
         </div>
 
         {/* Пагинация */}
@@ -210,6 +213,7 @@ export function Services() {
                 e.preventDefault()
                 e.stopPropagation()
                 setCurrentPage(prev => Math.max(prev - 1, 1))
+                servicesRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' })
               }}
               disabled={currentPage === 1}
               className={`flex h-12 w-12 items-center justify-center rounded-full border ${
@@ -227,7 +231,9 @@ export function Services() {
                   key={i}
                   onClick={(e) => {
                     e.preventDefault()
+                    e.stopPropagation()
                     setCurrentPage(i + 1)
+                    servicesRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' })
                   }}
                   className={`flex h-12 w-12 items-center justify-center rounded-full font-bold transition-all duration-300 ${
                     currentPage === i + 1
@@ -245,6 +251,7 @@ export function Services() {
                 e.preventDefault()
                 e.stopPropagation()
                 setCurrentPage(prev => Math.min(prev + 1, totalPages))
+                servicesRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' })
               }}
               disabled={currentPage === totalPages}
               className={`flex h-12 w-12 items-center justify-center rounded-full border ${

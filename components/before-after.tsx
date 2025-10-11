@@ -1,11 +1,11 @@
 const beforeAfterImages = [
   {
-    before: "/dirty-car-interior-beige-leather-seat-before-clean.jpg",
-    after: "/clean-car-interior-beige-leather-seat-after-detail.jpg",
+    before: "/beforeandafter/11.png",
+    after: "/beforeandafter/12.png",
   },
   {
-    before: "/car-ceiling-headliner-dirty-stained-before.jpg",
-    after: "/car-ceiling-headliner-clean-white-after-detailing.jpg",
+    before: "/beforeandafter/22.jpg",
+    after: "/beforeandafter/23.jpg",
   },
   {
     before: "/beforeandafter/1.jpg",
