@@ -1,8 +1,9 @@
 import type { Metadata } from 'next'
 import { GeistSans } from 'geist/font/sans'
 import { GeistMono } from 'geist/font/mono'
-import { Analytics } from '@vercel/analytics/next'
+// import { Analytics } from '@vercel/analytics/next' // Отключено, используем Яндекс.Метрику
 import { FloatingButtons } from '@/components/floating-buttons'
+import { ErrorHandler } from '@/components/error-handler'
 import Script from 'next/script'
 import './globals.css'
 
@@ -10,9 +11,12 @@ export const metadata: Metadata = {
   title: 'SLS DETAILING STUDIO | Детейлинг в Москве - Профессиональный уход за автомобилем',
   description: 'Детейлинг студия SLS в Москве ⭐ Полировка кузова ⭐ Химчистка салона ⭐ Защитные пленки ⭐ Керамика ⭐ Оклейка винилом ⭐ Удаление вмятин без покраски ⭐ 5.0 рейтинг на Яндексе ⭐ 36 отзывов ☎️ +7 (962) 909-99-62',
   icons: {
-    icon: '/favicon.svg',
-    shortcut: '/favicon.svg',
-    apple: '/favicon.svg',
+    icon: [
+      { url: '/favicon.ico', sizes: '32x32', type: 'image/x-icon' },
+      { url: '/favicon.svg', type: 'image/svg+xml' },
+    ],
+    shortcut: '/favicon.ico',
+    apple: '/apple-touch-icon.png',
   },
   keywords: 'детейлинг москва, полировка кузова, химчистка салона, защитные пленки, керамическое покрытие, оклейка винилом, детейлинг мойка, удаление вмятин, антигравийная пленка, детейлинг студия, автодетейлинг, детейлинг центр',
   authors: [{ name: 'SLS DETAILING STUDIO' }],
@@ -52,11 +56,18 @@ export default function RootLayout({
   return (
     <html lang="ru">
       <head>
+        <link rel="icon" href="/favicon.ico" type="image/x-icon" sizes="32x32" />
         <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-        <link rel="shortcut icon" href="/favicon.svg" type="image/svg+xml" />
-        <link rel="apple-touch-icon" href="/favicon.svg" />
+        <link rel="shortcut icon" href="/favicon.ico" />
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180" />
         {/* Яндекс.Метрика */}
-        <Script id="yandex-metrika" strategy="afterInteractive">
+        <Script 
+          id="yandex-metrika" 
+          strategy="afterInteractive"
+          onError={(e) => {
+            console.log('Yandex Metrika failed to load:', e);
+          }}
+        >
           {`
             (function(m,e,t,r,i,k,a){
                 m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
@@ -73,8 +84,20 @@ export default function RootLayout({
         </noscript>
 
         {/* Google Analytics (опционально) */}
-        <Script src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX" strategy="afterInteractive" />
-        <Script id="google-analytics" strategy="afterInteractive">
+        <Script 
+          src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX" 
+          strategy="afterInteractive"
+          onError={(e) => {
+            console.log('Google Analytics failed to load:', e);
+          }}
+        />
+        <Script 
+          id="google-analytics" 
+          strategy="afterInteractive"
+          onError={(e) => {
+            console.log('Google Analytics script failed:', e);
+          }}
+        >
           {`
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
@@ -84,7 +107,14 @@ export default function RootLayout({
         </Script>
 
         {/* Структурированные данные Schema.org */}
-        <Script id="schema-org" type="application/ld+json" strategy="afterInteractive">
+        <Script 
+          id="schema-org" 
+          type="application/ld+json" 
+          strategy="afterInteractive"
+          onError={(e) => {
+            console.log('Schema.org script failed:', e);
+          }}
+        >
           {JSON.stringify({
             "@context": "https://schema.org",
             "@type": "AutoRepair",
@@ -135,9 +165,9 @@ export default function RootLayout({
         </Script>
       </head>
       <body className={`font-sans ${GeistSans.variable} ${GeistMono.variable}`}>
+        <ErrorHandler />
         {children}
         <FloatingButtons />
-        <Analytics />
       </body>
     </html>
   )

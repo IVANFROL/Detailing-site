@@ -13,6 +13,32 @@ const nextConfig = {
   images: {
     domains: ['localhost'],
   },
+  // Обработка ошибок для внешних ресурсов
+  async headers() {
+    return [
+      {
+        source: '/(.*)',
+        headers: [
+          {
+            key: 'X-Content-Type-Options',
+            value: 'nosniff',
+          },
+          {
+            key: 'X-Frame-Options',
+            value: 'SAMEORIGIN',
+          },
+          {
+            key: 'X-XSS-Protection',
+            value: '1; mode=block',
+          },
+        ],
+      },
+    ]
+  },
+  // Отключение Vercel Analytics
+  experimental: {
+    instrumentationHook: false,
+  },
 }
 
 module.exports = nextConfig
