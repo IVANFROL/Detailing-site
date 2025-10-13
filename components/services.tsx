@@ -25,14 +25,14 @@ export function Services() {
       title: "ОКЛЕЙКА КУЗОВА ВИНИЛОМ",
       price: "от 150 000 ₽",
       description: "Полная оклейка кузова виниловой пленкой",
-      image: "/yslugi/ОКЛЕЙКА КУЗОВА ВИНИЛОМ.jpeg",
+      image: "/yslugi/vinyl-wrap.jpeg",
       category: "films",
     },
     {
       title: "ОКЛЕЙКА КУЗОВА ПОЛИУРЕТАНОМ",
       price: "от 75 000 ₽",
       description: "Полная оклейка кузова защитной полиуретановой пленкой",
-      image: "/yslugi/ОКЛЕЙКА КУЗОВА ПОЛИУРЕТАНОМ.jpeg",
+      image: "/yslugi/ppf-wrap.jpeg",
       category: "films",
     },
     
@@ -41,7 +41,7 @@ export function Services() {
       title: "ДЕТЕЙЛИНГ ПОЛИРОВКА",
       price: "от 20 000 ₽",
       description: "Полная полировка кузова автомобиля с устранением царапин и притертостей",
-      image: "/yslugi/ДЕТЕЙЛИНГ ПОЛИРОВКА.jpeg", // Новое фото
+      image: "/yslugi/detailing-polish.jpeg", // Новое фото
       category: "polish",
     },
     
@@ -50,14 +50,14 @@ export function Services() {
       title: "ЖИДКОЕ СТЕКЛО",
       price: "от 10 000 ₽", // Обновлена цена
       description: "Защитное покрытие жидким стеклом",
-      image: "/yslugi/ЖИДКОЕ СТЕКЛО.jpeg",
+      image: "/yslugi/liquid-glass.jpeg",
       category: "coating",
     },
     {
       title: "ТВЕРДЫЙ ВОСК",
       price: "от 3 000 ₽", // Обновлена цена
       description: "Защитное покрытие твердым воском",
-      image: "/yslugi/ТВЕРДЫЙ ВОСК.jpeg",
+      image: "/yslugi/hard-wax.jpeg",
       category: "coating",
     },
     
@@ -66,21 +66,21 @@ export function Services() {
       title: "МОЙКА ПОДВЕСКИ АВТОМОБИЛЯ",
       price: "от 6 000 ₽", // Обновлена цена
       description: "Тщательная мойка подвески автомобиля",
-      image: "yslugi/МОЙКА ПОДВЕСКИ АВТОМОБИЛЯ.jpeg",
+      image: "/yslugi/suspension-wash.jpeg",
       category: "cleaning",
     },
     {
       title: "ПОЛИРОВКА ФАР",
       price: "от 2 000 ₽", // Обновлена цена
       description: "Полировка фар (перед и зад) для восстановления прозрачности",
-      image: "/yslugi/ПОЛИРОВКА ФАР.jpeg",
+      image: "/yslugi/headlight-polish.jpeg",
       category: "polish",
     },
     {
       title: "МОЙКА ДВИГАТЕЛЯ",
       price: "от 3 000 ₽",
       description: "Безопасная Мойка мотора с диэлектрическим составом.",
-      image: "/yslugi/МОЙКА ДВИГАТЕЛЯ.jpeg", // Новое фото
+      image: "/yslugi/engine-wash.jpeg", // Новое фото
       category: "cleaning",
     },
     
@@ -89,21 +89,21 @@ export function Services() {
       title: "ДЕТЕЙЛИНГ ХИМЧИСТКА",
       price: "от 20 000 ₽",
       description: "Полная химчистка салона автомобиля с детальной обработкой",
-      image: "/yslugi/ДЕТЕЙЛИНГ ХИМЧИСТКА.jpeg", // Новое фото
+      image: "/yslugi/detailing-cleaning.jpeg", // Новое фото
       category: "cleaning",
     },
     {
       title: "ЗАЩИТА КОЖИ КЕРАМИКОЙ",
       price: "от 10 000 ₽", // Обновлена цена
       description: "Защитное керамическое покрытие для кожаных элементов салона",
-      image: "/yslugi/ЗАЩИТА КЕРАМИКОЙ.jpg", // Новое фото
+      image: "/yslugi/ceramic-protection.jpg", // Новое фото
       category: "coating",
     },
     {
       title: "ХИМЧИСТКА САЛОНА",
       price: "от 10 000 ₽",
       description: "Химчистка салона автомобиля любой сложности",
-      image: "/yslugi/ХИМЧИСТКА САЛОНА.jpeg",
+      image: "/yslugi/interior-cleaning.jpeg",
       category: "cleaning",
     },
     
@@ -112,7 +112,7 @@ export function Services() {
       title: "АНТИДОЖДЬ",
       price: "от 1 500 ₽", // Обновлена цена
       description: "Нанесение гидрофобного покрытия на стекла",
-      image: "/yslugi/АНТИДОЖДЬ.jpeg",
+      image: "/yslugi/anti-rain.jpeg",
       category: "coating",
     },
     
@@ -121,7 +121,7 @@ export function Services() {
       title: "ДЕТЕЙЛИНГ МОЙКА",
       price: "от 5 000 ₽",
       description: "Мойка кузова в три фазы с очисткой от битума, металлических вкраплений, колесных дисков. Уборка салона",
-      image: "/yslugi/ДЕТЕЙЛИНГ МОЙКА.jpeg",
+      image: "/yslugi/detailing-wash.jpeg",
       category: "cleaning",
     },
   ]

@@ -1,0 +1,23 @@
+# robots.txt для SLS DETAILING STUDIO
+User-agent: *
+Allow: /
+Disallow: /api/
+
+# Яндекс
+User-agent: Yandex
+Allow: /
+Disallow: /api/
+
+# Google
+User-agent: Googlebot
+Allow: /
+Disallow: /api/
+
+# Карта сайта
+Sitemap: https://sls-detailing.ru/sitemap.xml
+Sitemap: https://слс-дэтаилинг.рф/sitemap.xml
+
+# Основной домен
+Host: https://sls-detailing.ru
+
+
