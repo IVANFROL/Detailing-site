@@ -36,9 +36,7 @@ const nextConfig = {
     ]
   },
   // Отключение Vercel Analytics
-  experimental: {
-    instrumentationHook: false,
-  },
+  // experimental.instrumentationHook больше не нужен в Next.js 15
 }
 
 module.exports = nextConfig

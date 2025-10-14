@@ -3,6 +3,7 @@
 import { Button } from "@/components/ui/button"
 import { ArrowRight, ChevronLeft, ChevronRight } from "lucide-react"
 import { useState, useRef } from "react"
+import { ServiceCard } from "@/components/service-card"
 
 const categories = [
   { id: "all", name: "Все" },
@@ -22,6 +23,7 @@ export function Services() {
   const allServices = [
     // 1. КУЗОВ - ОКЛЕЙКА (самые дорогие 150k, 75k)
     {
+      id: "vinyl-wrapping",
       title: "ОКЛЕЙКА КУЗОВА ВИНИЛОМ",
       price: "от 150 000 ₽",
       description: "Полная оклейка кузова виниловой пленкой",
@@ -29,6 +31,7 @@ export function Services() {
       category: "films",
     },
     {
+      id: "ppf-wrapping",
       title: "ОКЛЕЙКА КУЗОВА ПОЛИУРЕТАНОМ",
       price: "от 75 000 ₽",
       description: "Полная оклейка кузова защитной полиуретановой пленкой",
@@ -38,6 +41,7 @@ export function Services() {
     
     // 2. КУЗОВ - ПОЛИРОВКА (20k)
     {
+      id: "polishing",
       title: "ДЕТЕЙЛИНГ ПОЛИРОВКА",
       price: "от 20 000 ₽",
       description: "Полная полировка кузова автомобиля с устранением царапин и притертостей",
@@ -47,6 +51,7 @@ export function Services() {
     
     // 3. КУЗОВ - ПОКРЫТИЯ (10k, 3k)
     {
+      id: "liquid-glass",
       title: "ЖИДКОЕ СТЕКЛО",
       price: "от 10 000 ₽", // Обновлена цена
       description: "Защитное покрытие жидким стеклом",
@@ -54,6 +59,7 @@ export function Services() {
       category: "coating",
     },
     {
+      id: "hard-wax",
       title: "ТВЕРДЫЙ ВОСК",
       price: "от 3 000 ₽", // Обновлена цена
       description: "Защитное покрытие твердым воском",
@@ -63,6 +69,7 @@ export function Services() {
     
     // 4. КУЗОВ - ОСТАЛЬНОЕ (6k, 2k, 3k)
     {
+      id: "suspension-wash",
       title: "МОЙКА ПОДВЕСКИ АВТОМОБИЛЯ",
       price: "от 6 000 ₽", // Обновлена цена
       description: "Тщательная мойка подвески автомобиля",
@@ -70,6 +77,7 @@ export function Services() {
       category: "cleaning",
     },
     {
+      id: "headlight-polish",
       title: "ПОЛИРОВКА ФАР",
       price: "от 2 000 ₽", // Обновлена цена
       description: "Полировка фар (перед и зад) для восстановления прозрачности",
@@ -77,6 +85,7 @@ export function Services() {
       category: "polish",
     },
     {
+      id: "engine-wash",
       title: "МОЙКА ДВИГАТЕЛЯ",
       price: "от 3 000 ₽",
       description: "Безопасная Мойка мотора с диэлектрическим составом.",
@@ -86,6 +95,7 @@ export function Services() {
     
     // 5. САЛОН - ХИМЧИСТКА (20k, 10k)
     {
+      id: "detailing-cleaning",
       title: "ДЕТЕЙЛИНГ ХИМЧИСТКА",
       price: "от 20 000 ₽",
       description: "Полная химчистка салона автомобиля с детальной обработкой",
@@ -93,6 +103,7 @@ export function Services() {
       category: "cleaning",
     },
     {
+      id: "ceramic-protection",
       title: "ЗАЩИТА КОЖИ КЕРАМИКОЙ",
       price: "от 10 000 ₽", // Обновлена цена
       description: "Защитное керамическое покрытие для кожаных элементов салона",
@@ -100,6 +111,7 @@ export function Services() {
       category: "coating",
     },
     {
+      id: "interior-cleaning",
       title: "ХИМЧИСТКА САЛОНА",
       price: "от 10 000 ₽",
       description: "Химчистка салона автомобиля любой сложности",
@@ -109,6 +121,7 @@ export function Services() {
     
     // 6. МЕЛОЧИ (1.5k)
     {
+      id: "anti-rain",
       title: "АНТИДОЖДЬ",
       price: "от 1 500 ₽", // Обновлена цена
       description: "Нанесение гидрофобного покрытия на стекла",
@@ -118,6 +131,7 @@ export function Services() {
     
     // Возвращаем ДЕТЕЙЛИНГ МОЙКУ
     {
+      id: "detailing-wash",
       title: "ДЕТЕЙЛИНГ МОЙКА",
       price: "от 5 000 ₽",
       description: "Мойка кузова в три фазы с очисткой от битума, металлических вкраплений, колесных дисков. Уборка салона",
@@ -174,34 +188,16 @@ export function Services() {
         <div className="min-h-[800px] md:min-h-[600px]">
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {currentServices.map((service, index) => (
-            <div key={index} className="group relative h-80 overflow-hidden rounded-lg border border-[#54E260]/20 hover:border-[#54E260]/40 transition-all duration-300">
-              <img
-                src={service.image || "/placeholder.svg"}
-                alt={service.title}
-                className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
+              <ServiceCard
+                key={index}
+                id={service.id}
+                title={service.title}
+                price={service.price}
+                description={service.description}
+                image={service.image || "/placeholder.svg"}
+                imageAlt={service.title}
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent" />
-              <div className="absolute inset-0 flex flex-col justify-end p-6">
-                <div className="mb-2 flex items-center justify-between">
-                  <h3 className="text-xl font-bold text-white">{service.title}</h3>
-                  <span className="text-lg font-bold text-[#54E260] whitespace-nowrap">{service.price}</span>
-                </div>
-                <p className="mb-4 text-sm text-[#575757]">{service.description}</p>
-                <button 
-                  onClick={() => {
-                    window.dispatchEvent(new CustomEvent('setFormSource', { 
-                      detail: { source: 'Запись на услугу', service: service.title } 
-                    }))
-                    document.getElementById('contact-form')?.scrollIntoView({ behavior: 'smooth' })
-                  }}
-                  className="flex items-center gap-2 text-[#54E260] transition-colors hover:text-[#348B41]"
-                >
-                  <span className="text-sm font-semibold">Записаться</span>
-                  <ArrowRight className="h-4 w-4" />
-                </button>
-              </div>
-            </div>
-          ))}
+            ))}
           </div>
         </div>
 

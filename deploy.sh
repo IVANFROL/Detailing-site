@@ -1,33 +1,61 @@
 #!/bin/bash
 
-# Переменные
-SERVER="root@45.95.234.84"
-DEPLOY_DIR="/var/www/sls-detailing"
-PM2_NAME="sls-detailing"
+# Скрипт для деплоя на сервер SLS Detailing
+# Использование: ./deploy.sh
 
-# Создаем production build
-echo "Creating production build..."
-pnpm build
+echo "🚀 Начинаем деплой на сервер..."
 
-# Создаем директорию на сервере
-echo "Creating directory on server..."
-ssh $SERVER "mkdir -p $DEPLOY_DIR"
+# Параметры подключения
+SERVER="45.95.234.84"
+USER="root"
+PASSWORD="h7-SfjHCN+9_nb"
+PROJECT_DIR="/var/www/sls-detailing"
 
-# Копируем файлы
-echo "Copying files to server..."
-rsync -avz --delete \
-    --exclude 'node_modules' \
-    --exclude '.git' \
-    --exclude '.env.local' \
-    ./ $SERVER:$DEPLOY_DIR/
+echo "📦 Подключаемся к серверу и обновляем код..."
 
-# Устанавливаем зависимости на сервере
-echo "Installing dependencies on server..."
-ssh $SERVER "cd $DEPLOY_DIR && pnpm install"
+# Используем expect для автоматического ввода пароля
+expect << EOF
+spawn ssh -p 2222 -o StrictHostKeyChecking=no $USER@$SERVER
+expect "password:"
+send "$PASSWORD\r"
+expect "#"
 
-# Настраиваем PM2
-echo "Setting up PM2..."
-ssh $SERVER "cd $DEPLOY_DIR && pm2 delete $PM2_NAME || true && pm2 start npm --name $PM2_NAME -- start"
+# Переходим в директорию проекта
+send "cd $PROJECT_DIR\r"
+expect "#"
 
-echo "Deployment completed!"
+# Обновляем код из Git
+send "git pull origin main\r"
+expect "#"
 
+# Устанавливаем зависимости
+send "pnpm install\r"
+expect "#"
+
+# Пересобираем проект
+send "pnpm build\r"
+expect "#"
+
+# Перезапускаем PM2
+send "pm2 restart sls-detailing\r"
+expect "#"
+
+# Проверяем статус
+send "pm2 status\r"
+expect "#"
+
+# Проверяем nginx
+send "nginx -t\r"
+expect "#"
+
+send "systemctl reload nginx\r"
+expect "#"
+
+send "exit\r"
+expect eof
+EOF
+
+echo "✅ Деплой завершен!"
+echo "🌐 Сайт доступен по адресам:"
+echo "   - https://sls-detailing.ru"
+echo "   - https://слс-дэтаилинг.рф"
