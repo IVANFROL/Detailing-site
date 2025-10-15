@@ -1,7 +1,6 @@
 import Image from 'next/image'
 import { ServiceDetails } from '@/components/service-details'
 import { PriceSection } from '@/components/price-section'
-import { OurWork } from '@/components/our-work'
 import { Reviews } from '@/components/reviews'
 import { ContactForm } from '@/components/contact-form'
 import { ContactSection } from '@/components/contact-section'
@@ -9,14 +8,14 @@ import { ContactSection } from '@/components/contact-section'
 export default function VinylWrappingPage() {
   const serviceData = {
     title: "ОКЛЕЙКА КУЗОВА ВИНИЛОМ",
-    description: "Наша услуга оклейки кузова винилом - это идеальное решение для тех, кто хочет кардинально изменить внешний вид своего автомобиля. Мы используем только качественные виниловые пленки премиум-класса, которые обеспечивают надежную защиту лакокрасочного покрытия и придают автомобилю стильный, современный вид.",
+    description: "Если вы хотите изменить цвет авто, то винил вам поможет. Но это далеко не единственное его преимущество. Виниловая пленка – это не просто способ преобразить внешний вид вашего автомобиля, это еще и надежная защита для его лакокрасочного покрытия. Представьте себе, как на кузове машины ежедневно оседают мельчайшие частицы пыли и грязи, как летит из-под колес гравий, как безжалостно палит солнце – все это медленно, но верно разрушает лак. Винил же берет на себя этот удар, предохраняя оригинальное покрытие от царапин, сколов и выцветания.",
     benefits: [
-      "Сохранение оригинального покрытия - виниловая пленка защищает заводскую краску от царапин, сколов и воздействия ультрафиолета",
-      "Экономия времени и средств - оклейка винилом значительно дешевле и быстрее полной перекраски автомобиля",
-      "Качество и долговечность - профессиональная оклейка прослужит 5-7 лет при правильном уходе",
-      "Возможность снятия - пленку можно снять в любой момент, вернув автомобилю первоначальный вид"
+      "Безграничные возможности кастомизации - Вы можете выбрать любой оттенок из огромной палитры, нанести интересный рисунок или текстуру, создать уникальный дизайн, который подчеркнет вашу индивидуальность",
+      "Демократичная цена - Матовый, глянцевый, металлик, хамелеон – вариантов масса, и все они доступны по цене гораздо более демократичной, чем полная покраска автомобиля",
+      "Легкое удаление - Винил легко удаляется, не оставляя следов. Это значит, что в любой момент вы можете вернуть автомобилю первоначальный вид или же снова изменить его облик",
+      "Защита и сохранение ценности - Это возможность выразить себя, сделать свой автомобиль уникальным и при этом не переживать за сохранность его лакокрасочного покрытия"
     ],
-    process: "Процесс оклейки начинается с тщательной подготовки поверхности - мойки, обезжиривания и удаления всех загрязнений. Затем специалисты снимают точные размеры и вырезают пленку по шаблону. Оклейка выполняется с использованием профессионального инструмента и специальных растворов, обеспечивающих идеальное прилегание пленки без пузырей и складок.",
+    process: "Таким образом, виниловая пленка – это не только стильное и современное решение, но и практичный способ защитить свой автомобиль и сохранить его ценность. Это возможность выразить себя, сделать свой автомобиль уникальным и при этом не переживать за сохранность его лакокрасочного покрытия.",
     whyChooseUs: [
       "Опыт и профессионализм - наши мастера обучены современным техникам оклейки и имеют многолетний опыт работы со всеми марками автомобилей",
       "Индивидуальный подход - мы тщательно изучаем особенности вашего автомобиля и предлагаем оптимальный вариант оклейки",
@@ -81,8 +80,69 @@ export default function VinylWrappingPage() {
       {/* Price Section */}
       <PriceSection {...priceData} />
 
-      {/* Our Work */}
-      <OurWork />
+      {/* Our Work - Vinyl Wrapping Gallery */}
+      <section className="py-20 bg-gray-900">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-white mb-4">НАШИ РАБОТЫ</h2>
+            <p className="text-xl text-gray-300">Примеры работ по оклейке винилом</p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="relative group">
+              <Image
+                src="/pages yslugi/vinil1.jpg"
+                alt="Оклейка винилом - работа 1"
+                width={300}
+                height={200}
+                className="w-full h-64 object-cover rounded-lg transition-transform duration-300 group-hover:scale-105"
+              />
+              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-3 rounded-b-lg">
+                <span className="text-white text-sm font-semibold">Виниловая оклейка</span>
+              </div>
+            </div>
+            
+            <div className="relative group">
+              <Image
+                src="/pages yslugi/vinil2.jpg"
+                alt="Оклейка винилом - работа 2"
+                width={300}
+                height={200}
+                className="w-full h-64 object-cover rounded-lg transition-transform duration-300 group-hover:scale-105"
+              />
+              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-3 rounded-b-lg">
+                <span className="text-white text-sm font-semibold">Кастомизация</span>
+              </div>
+            </div>
+            
+            <div className="relative group">
+              <Image
+                src="/pages yslugi/vinil3.jpg"
+                alt="Оклейка винилом - работа 3"
+                width={300}
+                height={200}
+                className="w-full h-64 object-cover rounded-lg transition-transform duration-300 group-hover:scale-105"
+              />
+              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-3 rounded-b-lg">
+                <span className="text-white text-sm font-semibold">Защита ЛКП</span>
+              </div>
+            </div>
+            
+            <div className="relative group">
+              <Image
+                src="/pages yslugi/vinil4.jpg"
+                alt="Оклейка винилом - работа 4"
+                width={300}
+                height={200}
+                className="w-full h-64 object-cover rounded-lg transition-transform duration-300 group-hover:scale-105"
+              />
+              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-3 rounded-b-lg">
+                <span className="text-white text-sm font-semibold">Уникальный дизайн</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* Reviews */}
       <Reviews />
