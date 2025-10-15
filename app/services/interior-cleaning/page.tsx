@@ -7,7 +7,7 @@ import { ContactSection } from '@/components/contact-section'
 
 export default function InteriorCleaningPage() {
   const serviceData = {
-    title: "ПРОФЕССИОНАЛЬНАЯ ХИМЧИСТКА САЛОНА",
+    title: "ДЕТЕЙЛИНГ ХИМЧИСТКА",
     description: "Забота о чистоте и свежести салона автомобиля – это не только вопрос эстетики, но и важный аспект поддержания здоровья водителя и пассажиров. Пыль, грязь, остатки пищи, шерсть домашних животных – все это создает благоприятную среду для размножения бактерий и аллергенов, которые могут негативно влиять на самочувствие и вызывать неприятные запахи. Профессиональная химчистка салона – это комплексная процедура, направленная на глубокую очистку всех поверхностей и материалов, обеспечивающая безупречную чистоту и свежесть.",
     benefits: [
       "Тщательная уборка - Первым этапом профессиональной химчистки является тщательная уборка салона пылесосом. Особое внимание уделяется труднодоступным местам, таким как щели между сиденьями, вентиляционные отверстия и карманы дверей",
@@ -26,7 +26,7 @@ export default function InteriorCleaningPage() {
   }
 
   const priceData = {
-    serviceName: "ХИМЧИСТКА САЛОНА",
+    serviceName: "ДЕТЕЙЛИНГ ХИМЧИСТКА",
     serviceDescription: "В услугу входит: мойка кузова, детейлинг-химчистка салона, пропитка кожи, сидений и подлокотников кондиционером Koch. Стоимость может меняться в зависимости от загрязнения автомобиля.",
     priceClasses: [
       { class: "I класс*", price: "от 15 000 руб" },
@@ -66,7 +66,7 @@ export default function InteriorCleaningPage() {
             SLS DETAILING
           </h1>
           <h2 className="text-3xl md:text-4xl font-bold mb-4 underline">
-            ХИМЧИСТКА САЛОНА
+            ДЕТЕЙЛИНГ ХИМЧИСТКА
           </h2>
           <div className="bg-white text-black px-6 py-3 rounded-full inline-block font-semibold text-xl">
             от 15 000 рублей
@@ -85,33 +85,46 @@ export default function InteriorCleaningPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-white mb-4">НАШИ РАБОТЫ</h2>
-            <p className="text-xl text-gray-300">Примеры работ по химчистке салона</p>
+            <p className="text-xl text-gray-300">Примеры работ по детейлинг химчистке</p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             <div className="relative group">
               <Image
-                src="/pages yslugi/ximchistka1.png"
-                alt="Химчистка салона - работа 1"
-                width={600}
-                height={400}
-                className="w-full h-80 object-cover rounded-lg transition-transform duration-300 group-hover:scale-105"
+                src="/pages yslugi/ximka1.jpg"
+                alt="Детейлинг химчистка - работа 1"
+                width={400}
+                height={300}
+                className="w-full h-64 object-cover rounded-lg transition-transform duration-300 group-hover:scale-105"
               />
-              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-4 rounded-b-lg">
-                <span className="text-white text-lg font-semibold">Химчистка салона</span>
+              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-3 rounded-b-lg">
+                <span className="text-white text-sm font-semibold">Детейлинг химчистка</span>
               </div>
             </div>
             
             <div className="relative group">
               <Image
-                src="/pages yslugi/ximchistka2.png"
-                alt="Химчистка салона - работа 2"
-                width={600}
-                height={400}
-                className="w-full h-80 object-cover rounded-lg transition-transform duration-300 group-hover:scale-105"
+                src="/pages yslugi/ximka2.jpg"
+                alt="Детейлинг химчистка - работа 2"
+                width={400}
+                height={300}
+                className="w-full h-64 object-cover rounded-lg transition-transform duration-300 group-hover:scale-105"
               />
-              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-4 rounded-b-lg">
-                <span className="text-white text-lg font-semibold">Результат химчистки</span>
+              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-3 rounded-b-lg">
+                <span className="text-white text-sm font-semibold">Профессиональная чистка</span>
+              </div>
+            </div>
+            
+            <div className="relative group">
+              <Image
+                src="/pages yslugi/ximka3.png"
+                alt="Детейлинг химчистка - работа 3"
+                width={400}
+                height={300}
+                className="w-full h-64 object-cover rounded-lg transition-transform duration-300 group-hover:scale-105"
+              />
+              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-3 rounded-b-lg">
+                <span className="text-white text-sm font-semibold">Результат работы</span>
               </div>
             </div>
           </div>

@@ -110,14 +110,14 @@ export function Services() {
       image: "/yslugi/ceramic-protection.jpg", // Новое фото
       category: "coating",
     },
-    {
-      id: "interior-cleaning",
-      title: "ХИМЧИСТКА САЛОНА",
-      price: "от 10 000 ₽",
-      description: "Химчистка салона автомобиля любой сложности",
-      image: "/yslugi/interior-cleaning.jpeg",
-      category: "cleaning",
-    },
+    // {
+    //   id: "interior-cleaning",
+    //   title: "ХИМЧИСТКА САЛОНА",
+    //   price: "от 10 000 ₽",
+    //   description: "Химчистка салона автомобиля любой сложности",
+    //   image: "/yslugi/interior-cleaning.jpeg",
+    //   category: "cleaning",
+    // },
     
     // 6. МЕЛОЧИ (1.5k)
     {

@@ -1,7 +1,6 @@
 import Image from 'next/image'
 import { ServiceDetails } from '@/components/service-details'
 import { PriceSection } from '@/components/price-section'
-import { OurWork } from '@/components/our-work'
 import { Reviews } from '@/components/reviews'
 import { ContactForm } from '@/components/contact-form'
 import { ContactSection } from '@/components/contact-section'
@@ -9,17 +8,17 @@ import { ContactSection } from '@/components/contact-section'
 export default function DetailingCleaningPage() {
   const serviceData = {
     title: "ДЕТЕЙЛИНГ ХИМЧИСТКА",
-    description: "Наша услуга детейлинг химчистки - это комплексная профессиональная очистка салона автомобиля с использованием специальных средств и оборудования. Мы выполняем глубокую очистку всех поверхностей салона, устраняя даже самые стойкие загрязнения и неприятные запахи.",
+    description: "Забота о чистоте и свежести салона автомобиля – это не только вопрос эстетики, но и важный аспект поддержания здоровья водителя и пассажиров. Пыль, грязь, остатки пищи, шерсть домашних животных – все это создает благоприятную среду для размножения бактерий и аллергенов, которые могут негативно влиять на самочувствие и вызывать неприятные запахи. Профессиональная химчистка салона – это комплексная процедура, направленная на глубокую очистку всех поверхностей и материалов, обеспечивающая безупречную чистоту и свежесть.",
     benefits: [
-      "Комплексная очистка - обрабатываем все поверхности салона",
-      "Устранение стойких загрязнений - удаляем даже самые сложные пятна",
-      "Борьба с запахами - полностью устраняем неприятные запахи",
-      "Защита материалов - используем средства, безопасные для всех типов обивки"
+      "Тщательная уборка - Первым этапом профессиональной химчистки является тщательная уборка салона пылесосом. Особое внимание уделяется труднодоступным местам, таким как щели между сиденьями, вентиляционные отверстия и карманы дверей",
+      "Локальная обработка - Затем проводится локальная обработка наиболее загрязненных участков с использованием специальных чистящих средств, удаляющих пятна от кофе, чая, масла и других трудновыводимых загрязнений",
+      "Глубокая чистка - Следующим этапом является глубокая чистка сидений, обшивки дверей и потолка с использованием экстракторного оборудования. Специальный раствор под давлением распыляется на поверхность, а затем немедленно всасывается вместе с грязью",
+      "Защитная обработка - Завершающим этапом является обработка пластиковых и кожаных элементов салона защитными составами, которые предотвращают выцветание и растрескивание под воздействием ультрафиолетового излучения"
     ],
-    process: "Процесс детейлинг химчистки начинается с тщательной пылесоски всех поверхностей. Затем специалисты наносят специальные чистящие средства, которые расщепляют загрязнения. После этого выполняется экстракция грязи с помощью профессионального оборудования. Завершается процесс нанесением защитных и кондиционирующих средств.",
+    process: "После химчистки салон автомобиля становится не только чистым, но и приобретает свежий и ухоженный вид, создавая приятную атмосферу комфорта и уюта. Этот метод позволяет эффективно удалить загрязнения даже из глубоких слоев материала, не повреждая его структуру.",
     whyChooseUs: [
-      "Опыт и профессионализм - наши специалисты обучены современным методам детейлинг химчистки",
-      "Специальное оборудование - используем профессиональные экстракторы и пылесосы",
+      "Опыт и профессионализм - наши специалисты обучены современным методам химчистки и имеют многолетний опыт работы",
+      "Специальное оборудование - используем только профессиональные экстракторы и пылесосы",
       "Качественные средства - работаем с проверенными, безопасными чистящими средствами",
       "Гарантия качества - предоставляем гарантию на все выполненные работы"
     ],
@@ -28,22 +27,22 @@ export default function DetailingCleaningPage() {
 
   const priceData = {
     serviceName: "ДЕТЕЙЛИНГ ХИМЧИСТКА",
-    serviceDescription: "В услугу входит: полная пылесоска, нанесение чистящих средств, экстракция загрязнений, нанесение защитных составов. Стоимость может меняться в зависимости от загрязнения салона.",
+    serviceDescription: "В услугу входит: мойка кузова, детейлинг-химчистка салона, пропитка кожи, сидений и подлокотников кондиционером Koch. Стоимость может меняться в зависимости от загрязнения автомобиля.",
     priceClasses: [
-      { class: "I класс*", price: "от 20 000 руб" },
-      { class: "II класс*", price: "от 25 000 руб" },
-      { class: "III класс*", price: "от 30 000 руб" },
-      { class: "IV класс*", price: "от 40 000 руб" }
+      { class: "I класс*", price: "от 15 000 руб" },
+      { class: "II класс*", price: "от 15 000 руб" },
+      { class: "III класс*", price: "от 20 000 руб" },
+      { class: "IV класс*", price: "от 25 000 руб" }
     ],
     additionalServices: [
-      { name: "Химчистка сидений", price: "от 5 000 руб" },
-      { name: "Химчистка ковров", price: "от 3 000 руб" },
-      { name: "Химчистка потолка", price: "от 4 000 руб" },
-      { name: "Химчистка дверей", price: "от 2 000 руб" },
-      { name: "Химчистка багажника", price: "от 3 000 руб" },
-      { name: "Химчистка торпеды", price: "от 3 000 руб" },
       { name: "Химчистка рулевого колеса", price: "от 1 500 руб" },
-      { name: "Химчистка педалей", price: "от 1 000 руб" }
+      { name: "Химчистка переднего сиденья", price: "от 2 000 руб" },
+      { name: "Химчистка заднего сиденья", price: "от 3 000 руб" },
+      { name: "Химчистка пола 1/4", price: "от 2 000 руб" },
+      { name: "Химчистка потолка", price: "от 4 000 руб" },
+      { name: "Химчистка дверной карты", price: "от 1 500 руб" },
+      { name: "Химчистка багажного отделения", price: "от 3 000 руб" },
+      { name: "Химчистка торпеды", price: "от 3 000 руб" }
     ]
   }
 
@@ -70,7 +69,7 @@ export default function DetailingCleaningPage() {
             ДЕТЕЙЛИНГ ХИМЧИСТКА
           </h2>
           <div className="bg-white text-black px-6 py-3 rounded-full inline-block font-semibold text-xl">
-            от 20 000 рублей
+            от 15 000 рублей
           </div>
         </div>
       </section>
@@ -81,8 +80,56 @@ export default function DetailingCleaningPage() {
       {/* Price Section */}
       <PriceSection {...priceData} />
 
-      {/* Our Work */}
-      <OurWork />
+      {/* Our Work - Detailing Cleaning Gallery */}
+      <section className="py-20 bg-gray-900">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-white mb-4">НАШИ РАБОТЫ</h2>
+            <p className="text-xl text-gray-300">Примеры работ по детейлинг химчистке</p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="relative group">
+              <Image
+                src="/pages yslugi/ximka1.jpg"
+                alt="Детейлинг химчистка - работа 1"
+                width={400}
+                height={300}
+                className="w-full h-64 object-cover rounded-lg transition-transform duration-300 group-hover:scale-105"
+              />
+              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-3 rounded-b-lg">
+                <span className="text-white text-sm font-semibold">Детейлинг химчистка</span>
+              </div>
+            </div>
+            
+            <div className="relative group">
+              <Image
+                src="/pages yslugi/ximka2.jpg"
+                alt="Детейлинг химчистка - работа 2"
+                width={400}
+                height={300}
+                className="w-full h-64 object-cover rounded-lg transition-transform duration-300 group-hover:scale-105"
+              />
+              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-3 rounded-b-lg">
+                <span className="text-white text-sm font-semibold">Профессиональная чистка</span>
+              </div>
+            </div>
+            
+            <div className="relative group">
+              <Image
+                src="/pages yslugi/ximka3.png"
+                alt="Детейлинг химчистка - работа 3"
+                width={400}
+                height={300}
+                className="w-full h-64 object-cover rounded-lg transition-transform duration-300 group-hover:scale-105"
+              />
+              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-3 rounded-b-lg">
+                <span className="text-white text-sm font-semibold">Результат работы</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* Reviews */}
       <Reviews />
