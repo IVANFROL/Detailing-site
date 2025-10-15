@@ -55,7 +55,7 @@ export function ContactSection() {
                   <Button 
                     variant="outline"
                     className="mt-4 border-[#54E260] text-[#54E260] hover:bg-[#54E260]/10"
-                    onClick={() => window.open("https://yandex.ru/maps/?ll=37.810557%2C55.948219&mode=routes&rtext=~55.948219%2C37.810557&rtt=mt&z=17", "_blank")}
+                    onClick={() => window.open("https://yandex.ru/maps/?ll=37.810557%2C55.948219&mode=routes&rtext=~ymapsbm1%3A%2F%2Forg%3Foid%3D162666416237&rtt=mt&z=17", "_blank")}
                   >
                     <MapPin className="w-4 h-4 mr-2" />
                     Построить маршрут

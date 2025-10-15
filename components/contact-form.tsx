@@ -48,10 +48,8 @@ export function ContactForm() {
       const data = await response.json()
 
       if (data.success) {
-        setSubmitStatus({ type: 'success', message: 'Спасибо! Ваша заявка успешно отправлена. Мы свяжемся с вами в ближайшее время.' })
-        setFormData({ name: "", phone: "", email: "", message: "" })
-        setSource("Общая заявка")
-        setService("")
+        // Перенаправляем на страницу благодарности
+        window.location.href = '/thank-you'
       } else {
         setSubmitStatus({ type: 'error', message: 'Произошла ошибка при отправке. Пожалуйста, попробуйте позже.' })
       }
