@@ -1,7 +1,6 @@
 import Image from 'next/image'
 import { ServiceDetails } from '@/components/service-details'
 import { PriceSection } from '@/components/price-section'
-import { OurWork } from '@/components/our-work'
 import { Reviews } from '@/components/reviews'
 import { ContactForm } from '@/components/contact-form'
 import { ContactSection } from '@/components/contact-section'
@@ -9,14 +8,14 @@ import { ContactSection } from '@/components/contact-section'
 export default function AntiRainPage() {
   const serviceData = {
     title: "АНТИДОЖДЬ",
-    description: "Наша услуга нанесения антидождевого покрытия - это современное решение для улучшения видимости в дождливую погоду. Гидрофобное покрытие отталкивает воду со стекол, обеспечивая лучшую видимость и безопасность вождения в любых погодных условиях.",
+    description: "Преимущества антидождя выходят далеко за рамки простой защиты от воды. Обработанное стекло меньше пачкается, на нем реже образуются наледь и снег, а насекомые и грязь легко удаляются при мойке. Это значит, что вы тратите меньше времени и усилий на поддержание чистоты стекол, что особенно актуально в длительных поездках.",
     benefits: [
-      "Улучшение видимости - вода скатывается со стекол, не задерживаясь",
-      "Безопасность - лучшая видимость в дождливую погоду",
-      "Удобство - меньше необходимости использовать дворники",
-      "Долговечность - покрытие служит до 6 месяцев"
+      "Защита от воды - Гидрофобное покрытие отталкивает воду со стекол, обеспечивая лучшую видимость и безопасность вождения в любых погодных условиях",
+      "Легкость очистки - Обработанное стекло меньше пачкается, а насекомые и грязь легко удаляются при мойке",
+      "Защита от наледи - На обработанном стекле реже образуются наледь и снег, что особенно важно в зимний период",
+      "Экономия времени - Вы тратите меньше времени и усилий на поддержание чистоты стекол, что особенно актуально в длительных поездках"
     ],
-    process: "Процесс нанесения антидождевого покрытия начинается с тщательной очистки стекол от загрязнений и обезжиривания. Затем специалисты наносят специальный гидрофобный состав тонким слоем. После нанесения покрытие оставляют для полимеризации, а затем полируют для достижения максимального эффекта.",
+    process: "Однако, не стоит забывать, что эффективность антидождя напрямую зависит от качества нанесения. Профессиональная обработка гарантирует равномерное покрытие и максимальную долговечность. Наши специалисты тщательно подготавливают поверхность стекла, удаляя загрязнения и обезжиривая ее, после чего наносят антидождь в строгом соответствии с инструкцией производителя.",
     whyChooseUs: [
       "Опыт и профессионализм - наши мастера обучены работе с гидрофобными покрытиями",
       "Качественные материалы - используем только проверенные антидождевые составы",
@@ -81,8 +80,43 @@ export default function AntiRainPage() {
       {/* Price Section */}
       <PriceSection {...priceData} />
 
-      {/* Our Work */}
-      <OurWork />
+      {/* Our Work - Anti-Rain Gallery */}
+      <section className="py-20 bg-gray-900">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-white mb-4">НАШИ РАБОТЫ</h2>
+            <p className="text-xl text-gray-300">Примеры работ по нанесению антидождя</p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="relative group">
+              <Image
+                src="/pages yslugi/antirain1.jpg"
+                alt="Нанесение антидождя - работа 1"
+                width={600}
+                height={400}
+                className="w-full h-80 object-cover rounded-lg transition-transform duration-300 group-hover:scale-105"
+              />
+              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-4 rounded-b-lg">
+                <span className="text-white text-lg font-semibold">Нанесение антидождя</span>
+              </div>
+            </div>
+            
+            <div className="relative group">
+              <Image
+                src="/pages yslugi/antirain2.jpg"
+                alt="Нанесение антидождя - работа 2"
+                width={600}
+                height={400}
+                className="w-full h-80 object-cover rounded-lg transition-transform duration-300 group-hover:scale-105"
+              />
+              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-4 rounded-b-lg">
+                <span className="text-white text-lg font-semibold">Результат обработки</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* Reviews */}
       <Reviews />

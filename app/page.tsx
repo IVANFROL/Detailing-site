@@ -20,7 +20,7 @@ export default function Home() {
       <OurWork />
       <Pricing />
       <Reviews />
-      <BeforeAfter />
+      {/* <BeforeAfter /> */}
       <ContactForm />
       <ContactSection />
       {/* <Clients /> */}

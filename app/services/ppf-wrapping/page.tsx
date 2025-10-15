@@ -1,7 +1,6 @@
 import Image from 'next/image'
 import { ServiceDetails } from '@/components/service-details'
 import { PriceSection } from '@/components/price-section'
-import { OurWork } from '@/components/our-work'
 import { Reviews } from '@/components/reviews'
 import { ContactForm } from '@/components/contact-form'
 import { ContactSection } from '@/components/contact-section'
@@ -9,14 +8,14 @@ import { ContactSection } from '@/components/contact-section'
 export default function PPFWrappingPage() {
   const serviceData = {
     title: "ОКЛЕЙКА КУЗОВА ПОЛИУРЕТАНОМ",
-    description: "Наша услуга оклейки кузова полиуретановой пленкой - это современное решение для защиты лакокрасочного покрытия от сколов, царапин и воздействия внешних факторов. Полиуретановая пленка обеспечивает максимальную защиту при сохранении внешнего вида автомобиля.",
+    description: "Полиуретановая пленка бывает не только прозрачная, но и цветная. Глянцевая и матовая. Это открывает безграничные возможности для дизайнерских решений, позволяя не просто защитить поверхность, но и придать ей уникальный внешний вид. Цветная пленка может имитировать различные материалы, например, карбон или шлифованный металл, либо просто добавить яркий акцент, соответствующий корпоративному стилю или личным предпочтениям.",
     benefits: [
-      "Максимальная защита - полиуретановая пленка защищает от сколов, царапин и воздействия дорожной грязи",
-      "Прозрачность - пленка практически незаметна и не изменяет внешний вид автомобиля",
-      "Долговечность - срок службы полиуретановой пленки составляет 5-10 лет",
-      "Самовосстановление - пленка имеет способность к самовосстановлению мелких царапин"
+      "Глянцевый эффект - Глянцевая пленка создает эффект мокрого блеска, делая цвет более насыщенным и глубоким. Она идеально подходит для автомобилей и других объектов, где важен визуальный эффект премиальности",
+      "Матовая элегантность - Матовая пленка, наоборот, приглушает блеск, создавая элегантный и сдержанный вид. Она хорошо скрывает мелкие дефекты поверхности и не бликует на солнце",
+      "Дизайнерские решения - Цветная пленка может имитировать различные материалы, например, карбон или шлифованный металл, либо просто добавить яркий акцент",
+      "Универсальность - Выбор между глянцевой и матовой, цветной или прозрачной полиуретановой пленкой зависит от конкретных задач и желаемого эффекта"
     ],
-    process: "Процесс оклейки полиуретановой пленкой начинается с тщательной подготовки поверхности. Затем специалисты наносят специальный активатор и аккуратно прикладывают пленку, используя профессиональные инструменты для удаления пузырей воздуха. Пленка наносится с соблюдением температурного режима и влажности.",
+    process: "В любом случае, полиуретановая пленка – это надежная защита и возможность преобразить любой объект. Важно учитывать условия эксплуатации, требования к внешнему виду и бюджет. Профессиональная оклейка полиуретановой пленкой включает в себя тщательную подготовку поверхности, точную нарезку по шаблону и аккуратное нанесение с соблюдением всех технологических требований.",
     whyChooseUs: [
       "Опыт и профессионализм - наши мастера обучены работе с полиуретановыми пленками",
       "Качественные материалы - используем только сертифицированные полиуретановые пленки",
@@ -81,8 +80,43 @@ export default function PPFWrappingPage() {
       {/* Price Section */}
       <PriceSection {...priceData} />
 
-      {/* Our Work */}
-      <OurWork />
+      {/* Our Work - PPF Wrapping Gallery */}
+      <section className="py-20 bg-gray-900">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-white mb-4">НАШИ РАБОТЫ</h2>
+            <p className="text-xl text-gray-300">Примеры работ по оклейке полиуретановой пленкой</p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="relative group">
+              <Image
+                src="/pages yslugi/polyurethanefilm1.jpg"
+                alt="Оклейка полиуретановой пленкой - работа 1"
+                width={600}
+                height={400}
+                className="w-full h-80 object-cover rounded-lg transition-transform duration-300 group-hover:scale-105"
+              />
+              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-4 rounded-b-lg">
+                <span className="text-white text-lg font-semibold">Полиуретановая пленка</span>
+              </div>
+            </div>
+            
+            <div className="relative group">
+              <Image
+                src="/pages yslugi/polyurethanefilm2.jpg"
+                alt="Оклейка полиуретановой пленкой - работа 2"
+                width={600}
+                height={400}
+                className="w-full h-80 object-cover rounded-lg transition-transform duration-300 group-hover:scale-105"
+              />
+              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-4 rounded-b-lg">
+                <span className="text-white text-lg font-semibold">Результат оклейки</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* Reviews */}
       <Reviews />

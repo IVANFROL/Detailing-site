@@ -1,7 +1,6 @@
 import Image from 'next/image'
 import { ServiceDetails } from '@/components/service-details'
 import { PriceSection } from '@/components/price-section'
-import { OurWork } from '@/components/our-work'
 import { Reviews } from '@/components/reviews'
 import { ContactForm } from '@/components/contact-form'
 import { ContactSection } from '@/components/contact-section'
@@ -9,14 +8,14 @@ import { ContactSection } from '@/components/contact-section'
 export default function HeadlightPolishPage() {
   const serviceData = {
     title: "ПОЛИРОВКА ФАР",
-    description: "Наша услуга полировки фар - это профессиональное восстановление прозрачности и блеска автомобильных фар. Мы используем современные технологии и качественные материалы для устранения помутнения, царапин и желтизны, возвращая фарам первоначальную прозрачность и эффективность освещения.",
+    description: "Фары автомобиля – это не просто источник света. Это глаза вашего верного железного коня, обеспечивающие безопасность на дороге в темное время суток и в сложных погодных условиях. К сожалению, фары подвержены постоянному воздействию негативных факторов окружающей среды: мелкий гравий, песок, насекомые, химические реагенты на дорогах – все это оставляет свой след в виде сколов, царапин и потертостей. В результате, фары мутнеют, теряют яркость и рассеивают свет, снижая видимость и создавая риск ДТП.",
     benefits: [
-      "Восстановление прозрачности - устраняем помутнение и желтизну фар",
-      "Улучшение освещения - восстанавливаем эффективность работы фар",
-      "Устранение царапин - полируем мелкие царапины и потертости",
-      "Защита от дальнейшего помутнения - наносим защитное покрытие"
+      "Защита от повреждений - Защитная пленка берет на себя все удары и царапины, предотвращая повреждение стекла или пластика фар",
+      "Защита от ультрафиолета - Пленка защищает от воздействия ультрафиолета, предотвращая пожелтение и выцветание",
+      "Сохранение яркости - Оклейка фар – это инвестиция в безопасность и эстетику вашего автомобиля",
+      "Долговечность - Это способ сохранить яркость и прозрачность фар на долгие годы, обеспечив комфортное и безопасное вождение"
     ],
-    process: "Процесс полировки фар начинается с тщательной мойки и обезжиривания поверхности. Затем специалисты оценивают состояние пластика и подбирают подходящую технологию полировки. Используются специальные пасты и полировальные круги для восстановления прозрачности. Завершается процесс нанесением защитного покрытия.",
+    process: "Чтобы избежать этих неприятностей и сохранить фары в первозданном виде, существует простое и эффективное решение – оклейка фар защитной пленкой. Эта процедура подразумевает нанесение на поверхность фар специальной полиуретановой пленкой, обладающей высокой прочностью и эластичностью.",
     whyChooseUs: [
       "Опыт и профессионализм - наши мастера знают все особенности полировки различных типов фар",
       "Специальное оборудование - используем профессиональные полировальные машины",
@@ -81,8 +80,43 @@ export default function HeadlightPolishPage() {
       {/* Price Section */}
       <PriceSection {...priceData} />
 
-      {/* Our Work */}
-      <OurWork />
+      {/* Our Work - Headlight Polish Gallery */}
+      <section className="py-20 bg-gray-900">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-white mb-4">НАШИ РАБОТЫ</h2>
+            <p className="text-xl text-gray-300">Примеры работ по полировке фар</p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="relative group">
+              <Image
+                src="/pages yslugi/fari1.jpg"
+                alt="Полировка фар - работа 1"
+                width={600}
+                height={400}
+                className="w-full h-80 object-cover rounded-lg transition-transform duration-300 group-hover:scale-105"
+              />
+              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-4 rounded-b-lg">
+                <span className="text-white text-lg font-semibold">Полировка фар</span>
+              </div>
+            </div>
+            
+            <div className="relative group">
+              <Image
+                src="/pages yslugi/fari2.jpg"
+                alt="Полировка фар - работа 2"
+                width={600}
+                height={400}
+                className="w-full h-80 object-cover rounded-lg transition-transform duration-300 group-hover:scale-105"
+              />
+              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-4 rounded-b-lg">
+                <span className="text-white text-lg font-semibold">Результат полировки</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* Reviews */}
       <Reviews />

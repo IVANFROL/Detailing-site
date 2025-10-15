@@ -1,7 +1,6 @@
 import Image from 'next/image'
 import { ServiceDetails } from '@/components/service-details'
 import { PriceSection } from '@/components/price-section'
-import { OurWork } from '@/components/our-work'
 import { Reviews } from '@/components/reviews'
 import { ContactForm } from '@/components/contact-form'
 import { ContactSection } from '@/components/contact-section'
@@ -9,14 +8,14 @@ import { ContactSection } from '@/components/contact-section'
 export default function CeramicProtectionPage() {
   const serviceData = {
     title: "ЗАЩИТА КОЖИ КЕРАМИКОЙ",
-    description: "Наша услуга защиты кожи керамическим покрытием - это современное решение для защиты кожаных элементов салона от загрязнений, износа и воздействия ультрафиолета. Керамическое покрытие создает невидимый защитный слой, который продлевает срок службы кожи и облегчает уход за ней.",
+    description: "Принцип действия керамической защиты заключается в создании молекулярной связи с поверхностью кожи. Наночастицы керамики проникают в поры материала, заполняя микротрещины и образуя гладкую и ровную поверхность. Это не только улучшает внешний вид кожи, но и значительно облегчает процесс очистки. Грязь, пыль и другие загрязнения легко удаляются с обработанной поверхности, не оставляя следов и не повреждая структуру кожи.",
     benefits: [
-      "Защита от загрязнений - керамическое покрытие отталкивает грязь и жидкости",
-      "Защита от УФ-излучения - предотвращает выцветание и старение кожи",
-      "Облегчение ухода - обработанная кожа легче очищается",
-      "Долговечность - покрытие служит до 2-3 лет"
+      "Долговечная защита - Долговечная защита от ультрафиолета, влаги и грязи",
+      "Предотвращение износа - Предотвращение выцветания, растрескивания и преждевременного износа",
+      "Улучшение внешнего вида - Улучшение внешнего вида кожи, придание ей гладкости и мягкости",
+      "Облегчение ухода - Облегчение процесса очистки и ухода за кожей, сохранение первозданного вида интерьера автомобиля на долгие годы"
     ],
-    process: "Процесс нанесения керамического покрытия начинается с тщательной очистки кожаных поверхностей. Затем специалисты наносят специальный керамический состав тонким слоем. После нанесения покрытие оставляют для полимеризации, а затем полируют для достижения идеального блеска.",
+    process: "Профессиональная керамическая защита кожи включает в себя тщательную очистку поверхности, нанесение специального керамического состава и его полимеризацию. Наночастицы керамики создают молекулярную связь с материалом, обеспечивая максимальную защиту и долговечность покрытия.",
     whyChooseUs: [
       "Опыт и профессионализм - наши мастера обучены работе с керамическими покрытиями",
       "Качественные материалы - используем только сертифицированные керамические составы",
@@ -81,8 +80,43 @@ export default function CeramicProtectionPage() {
       {/* Price Section */}
       <PriceSection {...priceData} />
 
-      {/* Our Work */}
-      <OurWork />
+      {/* Our Work - Ceramic Protection Gallery */}
+      <section className="py-20 bg-gray-900">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-white mb-4">НАШИ РАБОТЫ</h2>
+            <p className="text-xl text-gray-300">Примеры работ по керамической защите кожи</p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="relative group">
+              <Image
+                src="/pages yslugi/keramika1.jpg"
+                alt="Керамическая защита кожи - работа 1"
+                width={600}
+                height={400}
+                className="w-full h-80 object-cover rounded-lg transition-transform duration-300 group-hover:scale-105"
+              />
+              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-4 rounded-b-lg">
+                <span className="text-white text-lg font-semibold">Керамическая защита</span>
+              </div>
+            </div>
+            
+            <div className="relative group">
+              <Image
+                src="/pages yslugi/keramika2.jpg"
+                alt="Керамическая защита кожи - работа 2"
+                width={600}
+                height={400}
+                className="w-full h-80 object-cover rounded-lg transition-transform duration-300 group-hover:scale-105"
+              />
+              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-4 rounded-b-lg">
+                <span className="text-white text-lg font-semibold">Результат защиты</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* Reviews */}
       <Reviews />
