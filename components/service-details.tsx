@@ -31,7 +31,7 @@ export function ServiceDetails({
         {/* Преимущества */}
         <div className="mb-12">
           <h3 className="mb-6 text-2xl font-bold text-white">
-            Почему выбирают {title.toLowerCase()}?
+            {title.includes('ВИНИЛОМ') ? 'Почему выбирают винил?' : `Почему выбирают ${title.toLowerCase()}?`}
           </h3>
           <div className="space-y-4">
             {benefits.map((benefit, index) => (
