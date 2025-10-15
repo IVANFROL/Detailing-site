@@ -111,7 +111,7 @@ export default function CeramicProtectionPage() {
                 className="w-full h-80 object-cover rounded-lg transition-transform duration-300 group-hover:scale-105"
               />
               <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-4 rounded-b-lg">
-                <span className="text-white text-lg font-semibold">Результат защиты</span>
+                <span className="text-white text-lg font-semibold">Защита кожи керамикой</span>
               </div>
             </div>
           </div>

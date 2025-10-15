@@ -88,17 +88,17 @@ export default function HeadlightPolishPage() {
             <p className="text-xl text-gray-300">Примеры работ по полировке фар</p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             <div className="relative group">
               <Image
                 src="/pages yslugi/fari1.jpg"
                 alt="Полировка фар - работа 1"
-                width={600}
-                height={400}
-                className="w-full h-80 object-cover rounded-lg transition-transform duration-300 group-hover:scale-105"
+                width={400}
+                height={300}
+                className="w-full h-64 object-cover rounded-lg transition-transform duration-300 group-hover:scale-105"
               />
-              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-4 rounded-b-lg">
-                <span className="text-white text-lg font-semibold">Полировка фар</span>
+              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-3 rounded-b-lg">
+                <span className="text-white text-sm font-semibold">Полировка фар</span>
               </div>
             </div>
             
@@ -106,12 +106,25 @@ export default function HeadlightPolishPage() {
               <Image
                 src="/pages yslugi/fari2.jpg"
                 alt="Полировка фар - работа 2"
-                width={600}
-                height={400}
-                className="w-full h-80 object-cover rounded-lg transition-transform duration-300 group-hover:scale-105"
+                width={400}
+                height={300}
+                className="w-full h-64 object-cover rounded-lg transition-transform duration-300 group-hover:scale-105"
               />
-              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-4 rounded-b-lg">
-                <span className="text-white text-lg font-semibold">Результат полировки</span>
+              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-3 rounded-b-lg">
+                <span className="text-white text-sm font-semibold">Результат полировки</span>
+              </div>
+            </div>
+
+            <div className="relative group">
+              <Image
+                src="/pages yslugi/fari3.jpg"
+                alt="Полировка фар - работа 3"
+                width={400}
+                height={300}
+                className="w-full h-64 object-cover rounded-lg transition-transform duration-300 group-hover:scale-105"
+              />
+              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-3 rounded-b-lg">
+                <span className="text-white text-sm font-semibold">Профессиональная полировка</span>
               </div>
             </div>
           </div>
