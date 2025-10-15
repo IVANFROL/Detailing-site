@@ -1,7 +1,7 @@
 "use client"
 
 import { Button } from "@/components/ui/button"
-import { Phone } from "lucide-react"
+import { Phone, MapPin } from "lucide-react"
 
 export function Hero() {
   return (
@@ -34,7 +34,7 @@ export function Hero() {
         </p>
 
         {/* Кнопки */}
-        <div className="flex gap-4 items-center">
+        <div className="flex flex-col sm:flex-row gap-4 items-center">
           <Button
             onClick={() => {
               document.getElementById('contact-form')?.scrollIntoView({ behavior: 'smooth' })
@@ -51,6 +51,15 @@ export function Hero() {
           >
             <Phone className="h-5 w-5" />
             +7 (962) 909-99-62
+          </Button>
+
+          <Button
+            variant="outline"
+            onClick={() => window.open("https://yandex.ru/maps/?ll=37.810557%2C55.948219&mode=routes&rtext=~55.948219%2C37.810557&rtt=mt&z=17", "_blank")}
+            className="border-[#54E260] text-[#54E260] hover:bg-[#54E260]/10 transition-all duration-300 text-lg px-8 py-6 h-auto gap-3"
+          >
+            <MapPin className="h-5 w-5" />
+            Построить маршрут
           </Button>
         </div>
       </div>
