@@ -7,6 +7,46 @@ interface ServiceDetailsProps {
   callToAction: string
 }
 
+// Функция для правильного склонения названий услуг
+function getServiceNameInGenitive(serviceTitle: string): string {
+  const title = serviceTitle.toLowerCase()
+  
+  if (title.includes('полировка')) return 'полировку'
+  if (title.includes('жидкое стекло')) return 'нанесение жидкого стекла'
+  if (title.includes('мойка двигателя')) return 'мойку двигателя'
+  if (title.includes('химчистка')) return 'химчистку'
+  if (title.includes('керамик')) return 'керамическую защиту'
+  if (title.includes('антидождь')) return 'нанесение антидождя'
+  if (title.includes('трехфазная мойка')) return 'трехфазную мойку'
+  if (title.includes('твердый воск')) return 'нанесение твердого воска'
+  if (title.includes('винил')) return 'виниловую оклейку'
+  if (title.includes('полиуретан')) return 'оклейку полиуретаном'
+  if (title.includes('полировка фар')) return 'полировку фар'
+  if (title.includes('мойка подвески')) return 'мойку подвески'
+  
+  return title
+}
+
+// Функция для получения краткого названия услуги
+function getServiceShortName(serviceTitle: string): string {
+  const title = serviceTitle.toLowerCase()
+  
+  if (title.includes('полировка') && !title.includes('фар')) return 'полировку'
+  if (title.includes('жидкое стекло')) return 'жидкое стекло'
+  if (title.includes('мойка двигателя')) return 'мойку двигателя'
+  if (title.includes('химчистка')) return 'химчистку'
+  if (title.includes('керамик')) return 'керамическую защиту'
+  if (title.includes('антидождь')) return 'антидождь'
+  if (title.includes('трехфазная мойка')) return 'трехфазную мойку'
+  if (title.includes('твердый воск')) return 'твердый воск'
+  if (title.includes('винил')) return 'винил'
+  if (title.includes('полиуретан')) return 'полиуретан'
+  if (title.includes('полировка фар')) return 'полировку фар'
+  if (title.includes('мойка подвески')) return 'мойку подвески'
+  
+  return title
+}
+
 export function ServiceDetails({
   title,
   description,
@@ -31,7 +71,7 @@ export function ServiceDetails({
         {/* Преимущества */}
         <div className="mb-12">
           <h3 className="mb-6 text-2xl font-bold text-white">
-            {title.includes('ВИНИЛОМ') ? 'Почему выбирают винил?' : `Почему выбирают ${title.toLowerCase()}?`}
+            Почему выбирают {getServiceShortName(title)}?
           </h3>
           <div className="space-y-4">
             {benefits.map((benefit, index) => (
@@ -58,7 +98,7 @@ export function ServiceDetails({
         {/* Почему выбирают нас */}
         <div className="mb-12">
           <h3 className="mb-6 text-2xl font-bold text-white">
-            Почему стоит доверить {title.toLowerCase()} специалистам SLS DETAILING?
+            Почему стоит доверить {getServiceNameInGenitive(title)} специалистам SLS DETAILING?
           </h3>
           <div className="space-y-4">
             {whyChooseUs.map((reason, index) => (

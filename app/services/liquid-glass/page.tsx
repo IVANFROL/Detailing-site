@@ -1,7 +1,6 @@
 import Image from 'next/image'
 import { ServiceDetails } from '@/components/service-details'
 import { PriceSection } from '@/components/price-section'
-import { OurWork } from '@/components/our-work'
 import { Reviews } from '@/components/reviews'
 import { ContactForm } from '@/components/contact-form'
 import { ContactSection } from '@/components/contact-section'
@@ -81,8 +80,30 @@ export default function LiquidGlassPage() {
       {/* Price Section */}
       <PriceSection {...priceData} />
 
-      {/* Our Work */}
-      <OurWork />
+      {/* Our Work - Liquid Glass Gallery */}
+      <section className="py-20 bg-gray-900">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-white mb-4">НАШИ РАБОТЫ</h2>
+            <p className="text-xl text-gray-300">Примеры работ по нанесению жидкого стекла</p>
+          </div>
+          
+          <div className="flex justify-center">
+            <div className="relative group w-full">
+              <Image
+                src="/pages yslugi/djitkoesteklo1.jpg"
+                alt="Нанесение жидкого стекла - профессиональная работа"
+                width={1200}
+                height={600}
+                className="w-full h-[500px] object-cover rounded-lg transition-transform duration-300 group-hover:scale-105"
+              />
+              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-6 rounded-b-lg">
+                <span className="text-white text-xl font-semibold">Профессиональное нанесение жидкого стекла</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* Reviews */}
       <Reviews />

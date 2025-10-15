@@ -1,7 +1,6 @@
 import Image from 'next/image'
 import { ServiceDetails } from '@/components/service-details'
 import { PriceSection } from '@/components/price-section'
-import { OurWork } from '@/components/our-work'
 import { Reviews } from '@/components/reviews'
 import { ContactForm } from '@/components/contact-form'
 import { ContactSection } from '@/components/contact-section'
@@ -81,8 +80,43 @@ export default function HardWaxPage() {
       {/* Price Section */}
       <PriceSection {...priceData} />
 
-      {/* Our Work */}
-      <OurWork />
+      {/* Our Work - Hard Wax Gallery */}
+      <section className="py-20 bg-gray-900">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-white mb-4">НАШИ РАБОТЫ</h2>
+            <p className="text-xl text-gray-300">Примеры работ по нанесению твердого воска</p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="relative group">
+              <Image
+                src="/pages yslugi/tverdiyvosk1.jpg"
+                alt="Нанесение твердого воска - работа 1"
+                width={600}
+                height={400}
+                className="w-full h-80 object-cover rounded-lg transition-transform duration-300 group-hover:scale-105"
+              />
+              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-4 rounded-b-lg">
+                <span className="text-white text-lg font-semibold">Твердый воск</span>
+              </div>
+            </div>
+            
+            <div className="relative group">
+              <Image
+                src="/pages yslugi/tverdiyvosk2.jpg"
+                alt="Нанесение твердого воска - работа 2"
+                width={600}
+                height={400}
+                className="w-full h-80 object-cover rounded-lg transition-transform duration-300 group-hover:scale-105"
+              />
+              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-4 rounded-b-lg">
+                <span className="text-white text-lg font-semibold">Результат нанесения</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* Reviews */}
       <Reviews />
